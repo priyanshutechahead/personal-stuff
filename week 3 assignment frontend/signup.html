@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register | GlobeMind AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#434655",
+                        "primary": "#004ac6",
+                        "on-background": "#191b23",
+                        "outline": "#737686",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e0e3e5",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface-bright": "#faf8ff",
+                        "secondary-fixed-dim": "#c4c7c9",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdbcd",
+                        "surface-dim": "#d9d9e5",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "surface-container-low": "#f3f3fe",
+                        "surface-container": "#ededf9",
+                        "surface-tint": "#0053db",
+                        "background": "#faf8ff",
+                        "on-secondary-fixed-variant": "#444749",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3039",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-surface": "#191b23",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "surface-variant": "#e1e2ed",
+                        "secondary-container": "#e0e3e5",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "tertiary": "#943700",
+                        "primary-container": "#2563eb",
+                        "tertiary-container": "#bc4800",
+                        "primary-fixed": "#dbe1ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#ffede6",
+                        "surface-container-highest": "#e1e2ed",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary": "#5c5f61",
+                        "on-secondary-fixed": "#191c1e",
+                        "surface-container-high": "#e7e7f3",
+                        "on-secondary-container": "#626567",
+                        "surface": "#faf8ff",
+                        "on-primary-fixed": "#00174b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "unit": "4px",
+                        "stack-xs": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "stack-xl": "64px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "mono-label": ["monospace"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "display-lg-mobile": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "mono-label": ["13px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #faf8ff;
+            color: #191b23;
+            -webkit-font-smoothing: antialiased;
+        }
+        .form-card {
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease-out;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .input-focus-ring:focus {
+            outline: none;
+            border-color: #004ac6;
+            box-shadow: 0 0 0 1px #004ac6;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-lg text-body-lg">
+<!-- Subtle Background Atmosphere -->
+<div class="fixed inset-0 pointer-events-none opacity-40 z-0">
+
+</div>
+<!-- Top Bar (Minimal Branding) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 px-gutter py-4">
+<div class="max-w-container-max mx-auto flex justify-between items-center">
+<span class="font-display-lg text-headline-md font-bold text-primary">GlobeMind AI</span>
+<div class="hidden md:flex gap-stack-md items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Step 1 of 3</span>
+<div class="w-32 h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="w-1/3 h-full bg-primary"></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center pt-stack-xl pb-stack-xl px-margin-mobile relative z-10">
+<div class="w-full max-w-[480px]">
+<!-- Registration Card -->
+<div class="bg-white border border-outline-variant/50 rounded-xl p-8 md:p-10 form-card">
+<div class="mb-stack-md">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-2">Create your account</h1>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Start your journey with distilled intelligence.</p>
+</div>
+<form class="space-y-6" id="registrationForm">
+<!-- Name Field -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="name">FULL NAME</label>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-lg text-body-lg input-focus-ring transition-all placeholder:text-outline/50" id="name" name="name" placeholder="John Doe" required="" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="email">EMAIL ADDRESS</label>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-lg text-body-lg input-focus-ring transition-all placeholder:text-outline/50" id="email" name="email" placeholder="name@company.com" required="" type="email"/>
+</div>
+</div>
+<!-- Phone Number Field -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="phone">PHONE NUMBER</label>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-lg text-body-lg input-focus-ring transition-all placeholder:text-outline/50" id="phone" name="phone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="password">PASSWORD</label>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-lg text-body-lg input-focus-ring transition-all placeholder:text-outline/50" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+<p class="text-[11px] text-outline/70 mt-1">Must be at least 8 characters long.</p>
+</div>
+<!-- Next Button -->
+<button class="w-full mt-stack-md py-4 bg-primary text-white font-medium rounded-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all shadow-sm" type="submit">
+<span>Next</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<div class="mt-8 pt-6 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-body-sm text-on-surface-variant">Already have an account?</span>
+<a class="font-label-caps text-label-caps text-primary hover:underline" href="#">Log In</a>
+</div>
+</div>
+<!-- Trust Badges or Footer Links -->
+<div class="mt-8 flex justify-center gap-6">
+<div class="flex items-center gap-2 opacity-50 grayscale hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-caps text-[10px]">SECURE ENCRYPTION</span>
+</div>
+<div class="flex items-center gap-2 opacity-50 grayscale hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-[18px]">gpp_good</span>
+<span class="font-label-caps text-[10px]">GDPR COMPLIANT</span>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full py-stack-md bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body-sm text-body-sm text-secondary">© 2024 GlobeMind AI. Distilled Intelligence.</span>
+<div class="flex gap-6">
+<a class="font-body-sm text-body-sm text-secondary hover:text-primary hover:underline" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-secondary hover:text-primary hover:underline" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-secondary hover:text-primary hover:underline" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the password visibility toggle
+        const toggleBtn = document.querySelector('button[type="button"]');
+        const passwordInput = document.getElementById('password');
+        const visibilityIcon = toggleBtn.querySelector('.material-symbols-outlined');
+
+        toggleBtn.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            visibilityIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+        });
+
+        // Form Submission Logic
+        const form = document.getElementById('registrationForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real app, this would validate and then redirect to the interests step
+            console.log('Moving to interests selection...');
+            
+            // Visual feedback
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span>';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                alert('Account basic info saved. Redirecting to Interests selection...');
+                // Reset button for demo purposes
+                submitBtn.innerHTML = '<span>Next</span><span class="material-symbols-outlined">arrow_forward</span>';
+                submitBtn.disabled = false;
+            }, 1000);
+        });
+    </script>
+</body></html>
