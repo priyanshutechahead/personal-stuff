@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GlobeMind AI | Onboarding - Flora &amp; Fauna</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#0053db",
+                    "surface-container-highest": "#e1e2ed",
+                    "secondary-fixed-dim": "#c4c7c9",
+                    "on-background": "#191b23",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-secondary-container": "#626567",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-dim": "#d9d9e5",
+                    "outline-variant": "#c3c6d7",
+                    "surface-bright": "#faf8ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "error": "#ba1a1a",
+                    "background": "#faf8ff",
+                    "surface-container-high": "#e7e7f3",
+                    "on-error": "#ffffff",
+                    "secondary": "#5c5f61",
+                    "on-primary-container": "#eeefff",
+                    "on-secondary-fixed": "#191c1e",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "primary": "#004ac6",
+                    "outline": "#737686",
+                    "on-surface": "#191b23",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-container": "#ffede6",
+                    "on-secondary-fixed-variant": "#444749",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2e3039",
+                    "secondary-fixed": "#e0e3e5",
+                    "tertiary": "#943700",
+                    "surface-variant": "#e1e2ed",
+                    "secondary-container": "#e0e3e5",
+                    "primary-container": "#2563eb",
+                    "inverse-on-surface": "#f0f0fb",
+                    "surface": "#faf8ff",
+                    "tertiary-fixed": "#ffdbcd",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#434655",
+                    "surface-container": "#ededf9",
+                    "tertiary-container": "#bc4800",
+                    "surface-container-low": "#f3f3fe",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "stack-md": "24px",
+                    "container-max": "1280px",
+                    "stack-xs": "8px",
+                    "gutter": "24px",
+                    "stack-xl": "64px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Space Grotesk"],
+                    "body-sm": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "mono-label": ["monospace"],
+                    "headline-md": ["Space Grotesk"],
+                    "display-lg": ["Space Grotesk"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "mono-label": ["13px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #faf8ff;
+            color: #191b23;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .interest-card-hover {
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .interest-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.02);
+            border-color: #004ac6;
+        }
+        .selected-ring {
+            box-shadow: 0 0 0 2px #004ac6;
+        }
+        .progress-glow {
+            box-shadow: 0 0 12px rgba(0, 83, 219, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-lg text-body-lg">
+<!-- Header Section (Onboarding Progress) -->
+<header class="w-full h-16 bg-surface border-b border-outline-variant flex items-center px-gutter fixed top-0 z-50">
+<div class="max-w-container-max w-full mx-auto flex justify-between items-center">
+<div class="flex items-center gap-stack-xs">
+<span class="text-headline-md font-headline-md font-bold text-primary">GlobeMind AI</span>
+</div>
+<div class="hidden md:flex flex-col items-end gap-1">
+<div class="flex items-center gap-4">
+<span class="text-label-caps font-label-caps text-secondary uppercase tracking-widest">Step 3 of 4</span>
+<div class="w-48 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-primary progress-glow transition-all duration-700"></div>
+</div>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Biological Interests</span>
+</div>
+<div class="md:hidden">
+<span class="text-label-caps font-label-caps text-primary">3 / 4</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-stack-xl pb-stack-xl px-gutter mt-16 max-w-container-max mx-auto w-full">
+<div class="max-w-4xl mx-auto mb-stack-md text-center">
+<h1 class="font-headline-md text-headline-md text-on-background mb-stack-xs">Curate Your Biological Focus</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Select the ecosystems and species that drive your itinerary intelligence. Our AI will prioritize these habitats in your future expeditions.
+            </p>
+</div>
+<!-- Interest Selection Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Rainforests - Featured Large Card -->
+<div class="interest-card-hover md:col-span-8 relative group cursor-pointer overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest" onclick="toggleSelection(this)">
+<div class="aspect-[16/7] w-full relative overflow-hidden">
+<img alt="Rainforest canopy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A lush, dense emerald-green tropical rainforest canopy captured from an aerial perspective. Sunlight filters through the thick mist rising from the ancient trees, creating a serene and mysterious atmosphere. The lighting is soft and ethereal, emphasizing the vibrant shades of green and the rich biodiversity of the ecosystem. The style is modern, cinematic, and high-fidelity, consistent with a premium travel intelligence platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfS1NYy6x8DNmuTYFytBv4UV0Jcn9BF5zdKyT6LLkfM5gp3qQ7V-qvg11E4ERFMo3825y1eA29yFYVLAcp12D5Qsj21zH3qnj-n3HIWkVjofE8meFtw59gxZQULGpNJoZOqtbAy9-MRKlNYp_FbT4Yz3fqond7ilSUAPVdd3bLWo2Wmeq6fZhwUGetGnR0rZE2g9NYik9CR9dL29rtsyoyH5NRencbd42JmcSDp4w1QMa3FRpqIVTDDPMURtcAktRXBWoQBe4oGGM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="p-stack-md absolute bottom-0 left-0 right-0">
+<div class="flex justify-between items-end">
+<div>
+<span class="text-label-caps font-label-caps text-white/80 mb-1 block">ECOSYSTEM</span>
+<h3 class="text-headline-md font-headline-md text-white">Tropical Rainforests</h3>
+</div>
+<div class="check-icon opacity-0 bg-primary text-white p-2 rounded-full transition-opacity duration-200">
+<span class="material-symbols-outlined">check</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Marine Life - Square Card -->
+<div class="interest-card-hover md:col-span-4 relative group cursor-pointer overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest" onclick="toggleSelection(this)">
+<div class="aspect-square w-full relative overflow-hidden">
+<img alt="Underwater marine life" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A crystal-clear underwater scene featuring a vibrant coral reef teeming with colorful tropical fish and a sea turtle gliding gracefully. The lighting is bright and translucent, with sunbeams piercing through the turquoise water. The overall palette is dominated by serene blues and vivid coral oranges, creating a sense of wonder and clarity. The aesthetic is ultra-high definition and minimalist, reflecting a premium enterprise design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd8XLy6yOqcVtP8x4StJFdlTf8nfL9H9gbenqkCVbJTD1ZqouXuU2fHjQJdJQOmJfBP6AkBjNYtpPdzWRqRpkPZVHCLZ3PbsmhLUXZjTxsCM5Dl9WHUe7zYsrllCuvaYhDHypP_HdKPrGLN-xNb93fwdMfL5DBz23v0A8Le3TauB_eEJBjyEe4e41BJqcmwJug2Hdhl4SebaFN9_M5qeS1J2qN3aBHmF8tZjHLwEz4p-d8nv7WLElX2uTYIqyfhrCYHJq2bxNnPII"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="p-stack-md absolute bottom-0 left-0 right-0">
+<div class="flex justify-between items-end">
+<div>
+<span class="text-label-caps font-label-caps text-white/80 mb-1 block">WILDLIFE</span>
+<h3 class="text-headline-md font-headline-md text-white">Marine Life</h3>
+</div>
+<div class="check-icon opacity-0 bg-primary text-white p-2 rounded-full transition-opacity duration-200">
+<span class="material-symbols-outlined">check</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Rare Birds - Square Card -->
+<div class="interest-card-hover md:col-span-4 relative group cursor-pointer overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest" onclick="toggleSelection(this)">
+<div class="aspect-square w-full relative overflow-hidden">
+<img alt="Rare exotic bird" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up portrait of a strikingly beautiful exotic bird with iridescent feathers sitting on a mossy branch. The background is a soft, out-of-focus forest green, making the bird's intricate colors pop with intensity. The lighting is natural and directional, highlighting the delicate textures of the feathers. The composition is clean and focused, adhering to a high-end minimalist design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfLzryNA5N9VEwuAvWPQihSlW8cfvGdSm7X_zbHTwx8sk7P34yn7Ph_2OAA7bf4X_JDsNO_mLXY9gW5ykoQ1Cp-ZSWoHUqC3MxoItE7e6yl35yieqgW7qlqrgYRgv6eTZCPDmtZ_QcBCnhB5xpD_rodRv-p0Uk4bW7bq_MwpwUeVffYtUaGz8ycdsiaWL5PO0Cwg4M0atfq9MhcsmG3hleQapUor_-z2SYzCCM7HUiG27zjiL5GJ7nFGl-eYooL-J6NDypRzVEVzA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="p-stack-md absolute bottom-0 left-0 right-0">
+<div class="flex justify-between items-end">
+<div>
+<span class="text-label-caps font-label-caps text-white/80 mb-1 block">AVIAN</span>
+<h3 class="text-headline-md font-headline-md text-white">Rare Birds</h3>
+</div>
+<div class="check-icon opacity-0 bg-primary text-white p-2 rounded-full transition-opacity duration-200">
+<span class="material-symbols-outlined">check</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Arctic Fauna - Featured Large Card -->
+<div class="interest-card-hover md:col-span-8 relative group cursor-pointer overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest" onclick="toggleSelection(this)">
+<div class="aspect-[16/7] w-full relative overflow-hidden">
+<img alt="Arctic wilderness" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A breathtaking landscape of a stark, white arctic tundra under a pale blue sky. In the foreground, a majestic polar bear wanders across the snow-covered terrain. The lighting is bright and cold, creating a clean, white-first aesthetic that aligns with a minimalist enterprise interface. The scene is peaceful and vast, emphasizing the quiet power of high-latitude ecosystems and biological precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtY-CJkN8vhFE9O7zo5wvXQuf7tVvujVjL3IrHjYi99MkXSjREUlmsVfSlYR7PT5XJ09sVZ58Zlvq0PcwntGaf7o12ufKqU5j_PTRJuO6_FkMcVSZMtWtFeTKdPCo_5zsd7KE-WtaaHlSTMmewCSNEAnoHyytw8Ul5sJ0ENbifl5ShmQf_pwbe9iV12gbZnOUqJT1GQSWBj04bfSh07qrDhHP5H1AD9XfmG0MCh7qox_KnJuzM8-iyejDnBe6LAT9WZBA9WlQ91fg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<div class="p-stack-md absolute bottom-0 left-0 right-0">
+<div class="flex justify-between items-end">
+<div>
+<span class="text-label-caps font-label-caps text-white/80 mb-1 block">POLAR</span>
+<h3 class="text-headline-md font-headline-md text-white">Arctic Fauna</h3>
+</div>
+<div class="check-icon opacity-0 bg-primary text-white p-2 rounded-full transition-opacity duration-200">
+<span class="material-symbols-outlined">check</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Custom Search / Addition Field -->
+<div class="mt-stack-xl max-w-2xl mx-auto">
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-secondary">DON'T SEE YOUR INTEREST?</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg focus:ring-1 focus:ring-primary focus:border-primary transition-all outline-none" placeholder="Search for specific species, biomes, or botanical families..." type="text"/>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Navigation Footer -->
+<footer class="w-full bg-surface border-t border-outline-variant py-4 px-gutter fixed bottom-0 z-50">
+<div class="max-w-container-max w-full mx-auto flex justify-between items-center">
+<button class="flex items-center gap-2 px-6 py-2 border border-outline-variant rounded-lg text-secondary font-medium hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span>Back</span>
+</button>
+<div class="hidden md:flex items-center gap-2">
+<span class="text-body-sm text-on-surface-variant italic">Next step: Advanced Intelligence Settings</span>
+</div>
+<button class="flex items-center gap-2 px-8 py-2 bg-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity shadow-sm active:scale-95" onclick="window.location.reload()">
+<span>Next</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+<script>
+        function toggleSelection(element) {
+            const checkIcon = element.querySelector('.check-icon');
+            const isSelected = element.classList.contains('selected-ring');
+            
+            if (isSelected) {
+                element.classList.remove('selected-ring');
+                checkIcon.classList.add('opacity-0');
+            } else {
+                element.classList.add('selected-ring');
+                checkIcon.classList.remove('opacity-0');
+                
+                // Add a little celebratory micro-interaction
+                createSparkle(element);
+            }
+        }
+
+        function createSparkle(element) {
+            const rect = element.getBoundingClientRect();
+            // Optional: Add logical state management here if this were a real app
+        }
+
+        // Simple enter animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.interest-card-hover');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body></html>
