@@ -1,435 +1,511 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GlobeMind AI | Japan Intelligence Hub</title>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-error": "#ffffff",
-                    "surface-container-high": "#e7e7f3",
-                    "surface": "#faf8ff",
-                    "surface-container-low": "#f3f3fe",
-                    "on-secondary-fixed": "#191c1e",
-                    "on-primary-fixed-variant": "#003ea8",
-                    "inverse-on-surface": "#f0f0fb",
-                    "on-tertiary-fixed-variant": "#7d2d00",
-                    "surface-bright": "#faf8ff",
-                    "surface-container": "#ededf9",
-                    "inverse-surface": "#2e3039",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-dim": "#d9d9e5",
-                    "on-tertiary-container": "#ffede6",
-                    "on-surface-variant": "#434655",
-                    "primary-fixed-dim": "#b4c5ff",
-                    "secondary": "#5c5f61",
-                    "on-secondary": "#ffffff",
-                    "on-primary-container": "#eeefff",
-                    "surface-container-highest": "#e1e2ed",
-                    "on-surface": "#191b23",
-                    "inverse-primary": "#b4c5ff",
-                    "surface-tint": "#0053db",
-                    "surface-variant": "#e1e2ed",
-                    "outline": "#737686",
-                    "on-primary": "#ffffff",
-                    "secondary-fixed-dim": "#c4c7c9",
-                    "secondary-fixed": "#e0e3e5",
-                    "on-tertiary-fixed": "#360f00",
-                    "on-tertiary": "#ffffff",
-                    "primary-fixed": "#dbe1ff",
-                    "primary": "#004ac6",
-                    "outline-variant": "#c3c6d7",
-                    "secondary-container": "#e0e3e5",
-                    "on-secondary-container": "#626567",
-                    "error": "#ba1a1a",
-                    "on-background": "#191b23",
-                    "background": "#faf8ff",
-                    "primary-container": "#2563eb",
-                    "on-error-container": "#93000a",
-                    "tertiary-fixed": "#ffdbcd",
-                    "tertiary-container": "#bc4800",
-                    "tertiary-fixed-dim": "#ffb596",
-                    "tertiary": "#943700",
-                    "on-primary-fixed": "#00174b",
-                    "error-container": "#ffdad6",
-                    "on-secondary-fixed-variant": "#444749"
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Discoverly | Japan Intelligence Hub</title>
+    <!-- Google Fateonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e7e7f3",
+                        "surface": "#faf8ff",
+                        "surface-container-low": "#f3f3fe",
+                        "on-secondary-fixed": "#191c1e",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "inverse-on-surface": "#f0f0fb",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "surface-bright": "#faf8ff",
+                        "surface-container": "#ededf9",
+                        "inverse-surface": "#2e3039",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d9d9e5",
+                        "on-tertiary-container": "#ffede6",
+                        "on-surface-variant": "#434655",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "secondary": "#5c5f61",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "surface-container-highest": "#e1e2ed",
+                        "on-surface": "#191b23",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-tint": "#0053db",
+                        "surface-variant": "#e1e2ed",
+                        "outline": "#737686",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c4c7c9",
+                        "secondary-fixed": "#e0e3e5",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "primary": "#004ac6",
+                        "outline-variant": "#c3c6d7",
+                        "secondary-container": "#e0e3e5",
+                        "on-secondary-container": "#626567",
+                        "error": "#ba1a1a",
+                        "on-background": "#191b23",
+                        "background": "#faf8ff",
+                        "primary-container": "#2563eb",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffdbcd",
+                        "tertiary-container": "#bc4800",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "tertiary": "#943700",
+                        "on-primary-fixed": "#00174b",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#444749"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "stack-xl": "64px",
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "stack-xs": "8px",
+                        "stack-md": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Space Grotesk"],
+                        "mono-label": ["monospace"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "mono-label": ["13px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                },
             },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "gutter": "24px",
-                    "stack-xl": "64px",
-                    "margin-mobile": "16px",
-                    "unit": "4px",
-                    "stack-xs": "8px",
-                    "stack-md": "24px",
-                    "container-max": "1280px"
-            },
-            "fontFamily": {
-                    "display-lg": ["Space Grotesk"],
-                    "mono-label": ["monospace"],
-                    "body-sm": ["Inter"],
-                    "headline-md": ["Space Grotesk"],
-                    "label-caps": ["Inter"],
-                    "body-lg": ["Inter"]
-            },
-            "fontSize": {
-                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                    "mono-label": ["13px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
-                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
-                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "body-lg": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
+        }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             display: inline-block;
             vertical-align: middle;
         }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(226, 232, 240, 0.5);
         }
+
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             gap: 24px;
         }
+
         .hero- Japan-gradient {
             background: linear-gradient(135deg, #004ac6 0%, #2563eb 100%);
         }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #c3c6d7; border-radius: 10px; }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c3c6d7;
+            border-radius: 10px;
+        }
     </style>
 </head>
+
 <body class="bg-surface text-on-surface font-body-lg">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
-<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
-<div class="flex items-center gap-8">
-<span class="font-display-lg text-headline-md font-bold text-primary">GlobeMind AI</span>
-<div class="hidden md:flex gap-6">
-<a class="text-secondary hover:text-primary transition-colors font-body-lg" href="#">Product</a>
-<a class="text-secondary hover:text-primary transition-colors font-body-lg" href="#">Intelligence</a>
-<a class="text-secondary hover:text-primary transition-colors font-body-lg" href="#">Pricing</a>
-<a class="text-primary font-bold border-b-2 border-primary font-body-lg" href="#">Explore Demo</a>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="relative hidden lg:block">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-body-sm w-64 focus:ring-2 focus:ring-primary/20" placeholder="Explore destinations..." type="text"/>
-</div>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps hover:opacity-90 transition-opacity scale-95 transition-transform duration-200">
-                    Get Started
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+        <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-8">
+                <span class="font-display-lg text-headline-md font-bold text-primary">Discoverly</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative hidden lg:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+                    <input
+                        class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-body-sm w-64 focus:ring-2 focus:ring-primary/20"
+                        placeholder="Explore destinations..." type="text" />
+                </div>
+                <button
+                    class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps hover:opacity-90 transition-opacity scale-95 transition-transform duration-200">
+                    <a href="signin.html">Get Started</a>
                 </button>
-</div>
-</div>
-</nav>
-<main class="pt-24 pb-stack-xl max-w-container-max mx-auto px-gutter">
-<!-- Welcome Greeting & Persona Banner -->
-<header class="mb-stack-md">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-<div>
-<h1 class="font-display-lg text-display-lg text-on-surface">Welcome back, John</h1>
-<p class="text-secondary mt-1">Intelligence report updated 2 minutes ago.</p>
-</div>
-<div class="flex items-center gap-3 bg-primary-container/10 border border-primary/20 rounded-xl p-4">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">psychology</span>
-<div>
-<p class="font-label-caps text-primary">Tailored for your Tech Explorer Persona</p>
-<p class="text-body-sm text-on-surface-variant">Prioritizing Tokyo, Kyoto, and high-speed transit routes.</p>
-</div>
-</div>
-</div>
-</header>
-<!-- Cinematic Hero Card -->
-<section class="relative h-[500px] rounded-full overflow-hidden mb-stack-md group">
-<img alt="Japan Hero" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, wide-angle shot of a vibrant Japanese cityscape at dusk with the iconic silhouette of Mount Fuji in the background. The lighting is a blend of natural twilight blues and the warm, electric glow of neon city lights, creating a sophisticated and technologically advanced atmosphere. The composition is clean and minimalist, reflecting a premium SaaS aesthetic with high clarity and deep contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgOwIICotJtvHJcOnLo9mbeUTITxU1VHw2ZWM-ZhxWNY0whbZJg0GEz_U78oOlIe8SKdIHbw4FAYQ3-lFmaG3kC7y_eSSo9WcDSRaviXzCvG7IGiLtSTfJdd_EkHih-6nNhMHBcXfPU5sdjeaPxZyd90d8SZcZyrVb6Z0CxI_TfKYVr-yiLPoT-6dTPctOoybJGd5nkr7AD4eEAQEo9X4FUjPBD_QeSkvvJg6Euv5gJZq9q1UfOz976uAjhDgGanvNZnCfSPwLmTo"/>
-<div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
-<div class="relative h-full flex flex-col md:flex-row p-10 items-center justify-between">
-<div class="text-white max-w-xl">
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">public</span>
-<span class="font-label-caps tracking-[0.2em] text-primary-fixed">Distilled Intelligence</span>
-</div>
-<h2 class="font-display-lg text-display-lg leading-none">Japan</h2>
-<p class="font-headline-md text-headline-md mt-2 opacity-90">Land of the Rising Sun</p>
-<div class="mt-8 flex gap-4">
-<button class="bg-white text-primary px-8 py-3 rounded-full font-label-caps hover:bg-opacity-90 transition-all">Download Report</button>
-<button class="border border-white/30 backdrop-blur-sm text-white px-8 py-3 rounded-full font-label-caps hover:bg-white/10 transition-all">Full Analytics</button>
-</div>
-</div>
-<div class="w-full md:w-[400px] glass-card rounded-xl p-6 self-end md:self-center">
-<h3 class="font-headline-md text-on-surface mb-4">Explore Cities</h3>
-<div class="relative mb-6">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search_insights</span>
-<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-3 pl-10 pr-4 focus:ring-primary focus:border-primary" placeholder="Search city or district..." type="text"/>
-</div>
-<p class="font-label-caps text-outline mb-3">Frequent Inquiries</p>
-<div class="flex flex-wrap gap-2">
-<button class="px-4 py-2 bg-primary text-on-primary rounded-full text-body-sm transition-transform active:scale-95">Tokyo</button>
-<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-body-sm hover:bg-primary/10 transition-colors">Kyoto</button>
-<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-body-sm hover:bg-primary/10 transition-colors">Osaka</button>
-<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-body-sm hover:bg-primary/10 transition-colors">Fukuoka</button>
-<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-body-sm hover:bg-primary/10 transition-colors">Sapporo</button>
-</div>
-</div>
-</div>
-</section>
-<!-- Bento Intelligence Grid -->
-<div class="bento-grid">
-<!-- Metrics Column -->
-<div class="col-span-12 lg:col-span-3 flex flex-col gap-6">
-<div class="bg-white border border-outline-variant p-6 rounded-xl flex items-center justify-between shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
-<div>
-<p class="font-label-caps text-outline">Tokyo Weather</p>
-<p class="text-headline-md font-bold mt-1">24°C / 75°F</p>
-</div>
-<span class="material-symbols-outlined text-tertiary text-4xl">partly_cloudy_day</span>
-</div>
-<div class="bg-white border border-outline-variant p-6 rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
-<div class="flex justify-between items-center mb-4">
-<p class="font-label-caps text-outline">Air Quality</p>
-<span class="px-2 py-0.5 bg-green-100 text-green-800 text-[10px] rounded-full font-bold">EXCELLENT</span>
-</div>
-<div class="flex items-end gap-2">
-<p class="text-headline-md font-bold">12</p>
-<p class="text-body-sm text-secondary pb-1">AQI Index</p>
-</div>
-</div>
-<div class="bg-primary text-on-primary p-6 rounded-xl shadow-lg overflow-hidden relative">
-<div class="relative z-10">
-<p class="font-label-caps opacity-70">Exchange Rate</p>
-<p class="text-headline-md font-bold mt-1">1 USD = 151.2 JPY</p>
-<div class="flex items-center gap-1 mt-2 text-green-300">
-<span class="material-symbols-outlined text-sm">trending_up</span>
-<span class="text-body-sm font-bold">+0.42%</span>
-</div>
-</div>
-<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10">currency_exchange</span>
-</div>
-<div class="bg-white border border-outline-variant p-6 rounded-xl flex items-center gap-4 shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
-<span class="material-symbols-outlined text-primary text-3xl">schedule</span>
-<div>
-<p class="font-label-caps text-outline">Local Time (JST)</p>
-<p class="text-headline-md font-bold" id="tokyo-time">00:00:00</p>
-</div>
-</div>
-</div>
-<!-- Why People Love Japan Grid -->
-<div class="col-span-12 lg:col-span-6">
-<div class="bg-white border border-outline-variant rounded-xl p-8 h-full shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
-<h3 class="font-headline-md text-on-surface mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-24 pb-stack-xl max-w-container-max mx-auto px-gutter">
+        <!-- Welcome Greeting & Persona Banner -->
+        <header class="mb-stack-md">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h1 class="font-display-lg text-display-lg text-on-surface">Welcome to Discoverly</h1>
+                    <p class="text-secondary mt-1">Intelligence report updated 2 minutes ago.</p>
+                </div>
+                <div class="flex items-center gap-3 bg-primary-container/10 border border-primary/20 rounded-xl p-4">
+                    <span class="material-symbols-outlined text-primary"
+                        style="font-variation-settings: 'FILL' 1;">psychology</span>
+                </div>
+            </div>
+        </header>
+        <!-- Cinematic Hero Card -->
+        <section class="relative h-[500px] rounded-full overflow-hidden mb-stack-md group">
+            <img alt="Japan Hero"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                data-alt="A cinematic, wide-angle shot of a vibrant Japanese cityscape at dusk with the iconic silhouette of Mount Fuji in the background. The lighting is a blend of natural twilight blues and the warm, electric glow of neon city lights, creating a sophisticated and technologically advanced atmosphere. The composition is clean and minimalist, reflecting a premium SaaS aesthetic with high clarity and deep contrast."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgOwIICotJtvHJcOnLo9mbeUTITxU1VHw2ZWM-ZhxWNY0whbZJg0GEz_U78oOlIe8SKdIHbw4FAYQ3-lFmaG3kC7y_eSSo9WcDSRaviXzCvG7IGiLtSTfJdd_EkHih-6nNhMHBcXfPU5sdjeaPxZyd90d8SZcZyrVb6Z0CxI_TfKYVr-yiLPoT-6dTPctOoybJGd5nkr7AD4eEAQEo9X4FUjPBD_QeSkvvJg6Euv5gJZq9q1UfOz976uAjhDgGanvNZnCfSPwLmTo" />
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
+            <div class="relative h-full flex flex-col md:flex-row p-10 items-center justify-between">
+                <div class="text-white max-w-xl">
+                    <h2 class="font-display-lg text-display-lg leading-none">Japan</h2>
+                    <p class="font-headline-md text-headline-md mt-2 opacity-90">Land of the Rising Sun</p>
+                </div>
+                <div class="w-full md:w-[400px] glass-card rounded-xl p-6 self-end md:self-center">
+                    <h3 class="font-headline-md text-on-surface mb-4">Explore Cities</h3>
+                    <div class="relative mb-6">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search_insights</span>
+                        <input
+                            class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-3 pl-10 pr-4 focus:ring-primary focus:border-primary"
+                            placeholder="Search city or district..." type="text" />
+                    </div>
+                    <p class="font-label-caps text-outline mb-3">Frequent Inquiries</p>
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            class="px-4 py-2 bg-primary text-on-primary rounded-full text-body-sm transition-transform active:scale-95">Tokyo</button>
+                        <button
+                            class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-body-sm hover:bg-primary/10 transition-colors">Kyoto</button>
+                        <button
+                            class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-body-sm hover:bg-primary/10 transition-colors">Osaka</button>
+                        <button
+                            class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-body-sm hover:bg-primary/10 transition-colors">Fukuoka</button>
+                        <button
+                            class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-body-sm hover:bg-primary/10 transition-colors">Sapporo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Bento Intelligence Grid -->
+        <div class="bento-grid">
+            <!-- Metrics Column -->
+            <div class="col-span-12 lg:col-span-3 flex flex-col gap-6">
+                <div
+                    class="bg-white border border-outline-variant p-6 rounded-xl flex items-center justify-between shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+                    <div>
+                        <p class="font-label-caps text-outline">Tokyo Weather</p>
+                        <p class="text-headline-md font-bold mt-1">24°C / 75°F</p>
+                    </div>
+                    <span class="material-symbols-outlined text-tertiary text-4xl">partly_cloudy_day</span>
+                </div>
+                <div
+                    class="bg-white border border-outline-variant p-6 rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+                    <div class="flex justify-between items-center mb-4">
+                        <p class="font-label-caps text-outline">Air Quality</p>
+                        <span
+                            class="px-2 py-0.5 bg-green-100 text-green-800 text-[10px] rounded-full font-bold">EXCELLENT</span>
+                    </div>
+                    <div class="flex items-end gap-2">
+                        <p class="text-headline-md font-bold">12</p>
+                        <p class="text-body-sm text-secondary pb-1">AQI Index</p>
+                    </div>
+                </div>
+                <div class="bg-primary text-on-primary p-6 rounded-xl shadow-lg overflow-hidden relative">
+                    <div class="relative z-10">
+                        <p class="font-label-caps opacity-70">Exchange Rate</p>
+                        <p class="text-headline-md font-bold mt-1">1 USD = 151.2 JPY</p>
+                        <div class="flex items-center gap-1 mt-2 text-green-300">
+                            <span class="material-symbols-outlined text-sm">trending_up</span>
+                            <span class="text-body-sm font-bold">+0.42%</span>
+                        </div>
+                    </div>
+                    <span
+                        class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10">currency_exchange</span>
+                </div>
+                <div
+                    class="bg-white border border-outline-variant p-6 rounded-xl flex items-center gap-4 shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+                    <span class="material-symbols-outlined text-primary text-3xl">schedule</span>
+                    <div>
+                        <p class="font-label-caps text-outline">Local Time (JST)</p>
+                        <p class="text-headline-md font-bold" id="tokyo-time">00:00:00</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Why People Love Japan Grid -->
+            <div class="col-span-12 lg:col-span-6">
+                <div
+                    class="bg-white border border-outline-variant rounded-xl p-8 h-full shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+                    <h3 class="font-headline-md text-on-surface mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary"
+                            style="font-variation-settings: 'FILL' 1;">favorite</span>
                         Why People Love Japan
                     </h3>
-<div class="grid grid-cols-2 gap-4">
-<div class="p-4 rounded-lg bg-surface-container-low group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined mb-2 group-hover:text-white">train</span>
-<h4 class="font-bold mb-1">Seamless Transit</h4>
-<p class="text-body-sm opacity-70">The world's most efficient rail network.</p>
-</div>
-<div class="p-4 rounded-lg bg-surface-container-low group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined mb-2 group-hover:text-white">restaurant</span>
-<h4 class="font-bold mb-1">Culinary Mastery</h4>
-<p class="text-body-sm opacity-70">From street food to Michelin stars.</p>
-</div>
-<div class="p-4 rounded-lg bg-surface-container-low group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined mb-2 group-hover:text-white">temple_buddhist</span>
-<h4 class="font-bold mb-1">Timeless Tradition</h4>
-<p class="text-body-sm opacity-70">Ancient temples meeting neon dreams.</p>
-</div>
-<div class="p-4 rounded-lg bg-surface-container-low group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
-<span class="material-symbols-outlined mb-2 group-hover:text-white">nature_people</span>
-<h4 class="font-bold mb-1">Serene Nature</h4>
-<p class="text-body-sm opacity-70">Cherry blossoms and snowy peaks.</p>
-</div>
-</div>
-<div class="mt-8 bg-surface-container rounded-xl p-6">
-<p class="text-body-lg italic text-secondary">"The juxtaposition of high-tech innovation and preserved cultural heritage makes Japan a unique intelligence case study."</p>
-<div class="mt-4 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-primary-container"></div>
-<div>
-<p class="text-body-sm font-bold">GlobeMind AI Agent</p>
-<p class="text-body-sm text-outline">Strategic Travel Analysis</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Real-time Intelligence Feed -->
-<div class="col-span-12 lg:col-span-3">
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 h-full flex flex-col shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
-<div class="flex items-center justify-between mb-6">
-<h3 class="font-label-caps text-on-surface">Real-time Intel</h3>
-<span class="flex h-2 w-2 rounded-full bg-error animate-pulse"></span>
-</div>
-<div class="flex-1 space-y-6 overflow-y-auto pr-2">
-<div class="border-l-2 border-primary pl-4 py-1">
-<p class="text-[10px] font-bold text-primary mb-1 uppercase tracking-wider">Economics</p>
-<h4 class="text-body-sm font-bold leading-tight">BOJ maintains interest rates amid mild inflation recovery.</h4>
-<p class="text-[11px] text-outline mt-2">14 mins ago • Nikkei Asia</p>
-</div>
-<div class="border-l-2 border-tertiary pl-4 py-1">
-<p class="text-[10px] font-bold text-tertiary mb-1 uppercase tracking-wider">Tech</p>
-<h4 class="text-body-sm font-bold leading-tight">New maglev train prototype reaches 580km/h in Yamanashi.</h4>
-<p class="text-[11px] text-outline mt-2">48 mins ago • TechPulse JP</p>
-</div>
-<div class="border-l-2 border-secondary pl-4 py-1">
-<p class="text-[10px] font-bold text-secondary mb-1 uppercase tracking-wider">Society</p>
-<h4 class="text-body-sm font-bold leading-tight">Sakura season officially begins 3 days earlier than 2023.</h4>
-<p class="text-[11px] text-outline mt-2">2 hours ago • NHK World</p>
-</div>
-<div class="border-l-2 border-primary pl-4 py-1">
-<p class="text-[10px] font-bold text-primary mb-1 uppercase tracking-wider">Infrastructure</p>
-<h4 class="text-body-sm font-bold leading-tight">Expansion of 5G coverage in rural Hokkaido complete.</h4>
-<p class="text-[11px] text-outline mt-2">5 hours ago • Intel Hub</p>
-</div>
-</div>
-<button class="mt-6 w-full py-3 border border-outline-variant rounded-lg font-label-caps text-on-surface-variant hover:bg-surface-container-low transition-colors">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="p-4 rounded-lg bg-surface-container-low group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
+                            <span class="material-symbols-outlined mb-2 group-hover:text-white">train</span>
+                            <h4 class="font-bold mb-1">Seamless Transit</h4>
+                            <p class="text-body-sm opacity-70">The world's most efficient rail network.</p>
+                        </div>
+                        <div
+                            class="p-4 rounded-lg bg-surface-container-low group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
+                            <span class="material-symbols-outlined mb-2 group-hover:text-white">restaurant</span>
+                            <h4 class="font-bold mb-1">Culinary Mastery</h4>
+                            <p class="text-body-sm opacity-70">From street food to Michelin stars.</p>
+                        </div>
+                        <div
+                            class="p-4 rounded-lg bg-surface-container-low group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
+                            <span class="material-symbols-outlined mb-2 group-hover:text-white">temple_buddhist</span>
+                            <h4 class="font-bold mb-1">Timeless Tradition</h4>
+                            <p class="text-body-sm opacity-70">Ancient temples meeting neon dreams.</p>
+                        </div>
+                        <div
+                            class="p-4 rounded-lg bg-surface-container-low group cursor-pointer hover:bg-primary hover:text-white transition-all duration-300">
+                            <span class="material-symbols-outlined mb-2 group-hover:text-white">nature_people</span>
+                            <h4 class="font-bold mb-1">Serene Nature</h4>
+                            <p class="text-body-sm opacity-70">Cherry blossoms and snowy peaks.</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-surface-container rounded-xl p-6">
+                        <p class="text-body-lg italic text-secondary">"The juxtaposition of high-tech innovation and
+                            preserved cultural heritage makes Japan a unique intelligence case study."</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-primary-container"></div>
+                            <div>
+                                <p class="text-body-sm font-bold">Discoverly Agent</p>
+                                <p class="text-body-sm text-outline">Strategic Travel Analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Real-time Intelligence Feed -->
+            <div class="col-span-12 lg:col-span-3">
+                <div
+                    class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 h-full flex flex-col shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="font-label-caps text-on-surface">Real-time Intel</h3>
+                        <span class="flex h-2 w-2 rounded-full bg-error animate-pulse"></span>
+                    </div>
+                    <div class="flex-1 space-y-6 overflow-y-auto pr-2">
+                        <div class="border-l-2 border-primary pl-4 py-1">
+                            <p class="text-[10px] font-bold text-primary mb-1 uppercase tracking-wider">Economics</p>
+                            <h4 class="text-body-sm font-bold leading-tight">BOJ maintains interest rates amid mild
+                                inflation recovery.</h4>
+                            <p class="text-[11px] text-outline mt-2">14 mins ago • Nikkei Asia</p>
+                        </div>
+                        <div class="border-l-2 border-tertiary pl-4 py-1">
+                            <p class="text-[10px] font-bold text-tertiary mb-1 uppercase tracking-wider">Tech</p>
+                            <h4 class="text-body-sm font-bold leading-tight">New maglev train prototype reaches 580km/h
+                                in Yamanashi.</h4>
+                            <p class="text-[11px] text-outline mt-2">48 mins ago • TechPulse JP</p>
+                        </div>
+                        <div class="border-l-2 border-secondary pl-4 py-1">
+                            <p class="text-[10px] font-bold text-secondary mb-1 uppercase tracking-wider">Society</p>
+                            <h4 class="text-body-sm font-bold leading-tight">Sakura season officially begins 3 days
+                                earlier than 2023.</h4>
+                            <p class="text-[11px] text-outline mt-2">2 hours ago • NHK World</p>
+                        </div>
+                        <div class="border-l-2 border-primary pl-4 py-1">
+                            <p class="text-[10px] font-bold text-primary mb-1 uppercase tracking-wider">Infrastructure
+                            </p>
+                            <h4 class="text-body-sm font-bold leading-tight">Expansion of 5G coverage in rural Hokkaido
+                                complete.</h4>
+                            <p class="text-[11px] text-outline mt-2">5 hours ago • Intel Hub</p>
+                        </div>
+                    </div>
+                    <button
+                        class="mt-6 w-full py-3 border border-outline-variant rounded-lg font-label-caps text-on-surface-variant hover:bg-surface-container-low transition-colors">
                         View Global Feed
                     </button>
-</div>
-</div>
-</div>
-<!-- Similar Destinations Carousel -->
-<section class="mt-stack-xl">
-<div class="flex items-center justify-between mb-8">
-<div>
-<h3 class="font-headline-md text-on-surface">Discover Similar Destinations</h3>
-<p class="text-body-sm text-secondary">AI-curated recommendations based on your affinity for Japan.</p>
-</div>
-<div class="flex gap-2">
-<button class="p-2 rounded-full border border-outline-variant text-outline hover:text-primary hover:border-primary transition-all">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<button class="p-2 rounded-full border border-outline-variant text-outline hover:text-primary hover:border-primary transition-all">
-<span class="material-symbols-outlined">arrow_forward</span>
-</button>
-</div>
-</div>
-<div class="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
-<!-- Card 1 -->
-<div class="min-w-[300px] bg-white border border-outline-variant rounded-xl overflow-hidden group cursor-pointer shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
-<div class="h-48 overflow-hidden relative">
-<img alt="South Korea" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A cinematic, modern landscape of South Korea featuring the Gyeongbokgung Palace contrasted with futuristic skyscrapers in the distance. The lighting is crisp and cool-toned, echoing the minimalist light-mode aesthetic of GlobeMind. High-precision architectural details and a clean sky convey a sense of intelligence and efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt8NxLW_BZNfKCcJk2dafGA4otV0XkJRW-3y5_7rmNaHcTJEmTuS5zAqHYkoSHcX-b2a6vKYwKtxwebnXXg_qGbAyJddxSiuMAYcWPUf9dkSggxXM1Typh8Z2E1GNO_cWmW6TEtzhcQOQAXZ09h2a5N7h-6Q87GMaSTxd7HzGy1UszimRPiBMNeQ78dBoPrY_7pRZxy9EV7wTRhp8zo1gWS9HgQzuyUCL8iwgOPk5mscOiCa38HJVWvZLEdTCXxkOl7eCb_BpiU8E"/>
-<div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">94% MATCH</div>
-</div>
-<div class="p-6">
-<h4 class="font-headline-md text-on-surface mb-2">South Korea</h4>
-<p class="text-body-sm text-secondary mb-4 line-clamp-2">The ultimate tech-forward counterpart with a deep reverence for tradition.</p>
-<div class="flex items-center gap-2">
-<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">TECH-HUB</span>
-<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">GASTRONOMY</span>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="min-w-[300px] bg-white border border-outline-variant rounded-xl overflow-hidden group cursor-pointer shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
-<div class="h-48 overflow-hidden relative">
-<img alt="Bali" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A lush, serene shot of the rice terraces in Bali at sunrise. The lighting is golden and soft, creating a tranquil yet sophisticated mood. The image maintains a clean, minimalist professional aesthetic with a high-key color palette and focuses on the orderly beauty of nature, reflecting GlobeMind's premium design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC0MoKO5fESj1SaeebbRDf_hJ1yP12FxVYM7_YEVBCE0XiT5qfiX9W7F6FfKxBvoRwNdOPr-YLTAXSxmdrNyNR1fnmfPhL0rIphf5XYSnyEQPsYvuIHNXvfib2VcSViA0O6ii_fFM4wrZBrJYLTBqccXaAq3qoigCItXSrHcOWPtEm2R3RqXrcfNY3e3jpbD4ZLWUpkEatQf8rrDYR8YfmnAeIYQZz6K_UlZqFQsZVSMzvcSQNbcziG58xU20GNKCp7Ul51sFNoiw"/>
-<div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">82% MATCH</div>
-</div>
-<div class="p-6">
-<h4 class="font-headline-md text-on-surface mb-2">Bali, Indonesia</h4>
-<p class="text-body-sm text-secondary mb-4 line-clamp-2">Ideal for spiritual rejuvenation and high-end digital nomad connectivity.</p>
-<div class="flex items-center gap-2">
-<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">NATURE</span>
-<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">SPIRITUAL</span>
-</div>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="min-w-[300px] bg-white border border-outline-variant rounded-xl overflow-hidden group cursor-pointer shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
-<div class="h-48 overflow-hidden relative">
-<img alt="Sydney" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A wide panoramic shot of Sydney Harbour with the Opera House gleaming under a bright blue sky. The scene is illuminated by crisp, midday sunlight, emphasizing a clean and vibrant light-mode aesthetic. The composition is structured and architectural, conveying a premium and efficient urban atmosphere consistent with GlobeMind AI's visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMjEr1lqChtjBAg4tvuUlMnHTlxU5EUOvshuOBI5R0c3rYhQ9eWnMN8bWsMyd7_DB5A2yrXsXLZKnytCf4PC3gu4bv8gg7Uf3Dtc7lCRec3weTGuJZMC-6IrOWeU8PKKJz3a4P-tV2wUlv_QPS4N3UgoH3P5a2qpveNG57BQ7b80jdM3RNA48rs-_YfzCk-d_1GhjejE8G94gHVOj3PPoK3JbJqdvqkaeiWuBQDYaSDvo33BLBwjHU5ZABu4iW2rbat8Bw5Z4OkQ4"/>
-<div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">78% MATCH</div>
-</div>
-<div class="p-6">
-<h4 class="font-headline-md text-on-surface mb-2">Sydney, Australia</h4>
-<p class="text-body-sm text-secondary mb-4 line-clamp-2">Sophisticated urban planning with world-class logistics and coastal lifestyle.</p>
-<div class="flex items-center gap-2">
-<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">COASTAL</span>
-<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">URBAN</span>
-</div>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="min-w-[300px] bg-white border border-outline-variant rounded-xl overflow-hidden group cursor-pointer shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
-<div class="h-48 overflow-hidden relative">
-<img alt="Singapore" class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A minimalist architectural shot of the Singapore skyline featuring the Marina Bay Sands. The image is bright and clean, with a focus on geometric shapes and advanced urban design. The palette is dominated by soft whites and cool grays with pops of electric blue, reflecting a high-performance, enterprise-grade aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAobyoB5ybY9WfPO9Z7kz5gv0uWpR8xEErrWd7-1SRooAh1IuMPlTxCiPHJFo9S98beldYx3t3pt3Idwprnn3pg6mskg9hOnvNap1VeCpONQpgny5LmvOWHi35eRtu1Og16SmUyOnUGWRS_jAD2C8y_JIqKAcJWKwPMQvNg8XDSchPjLGFbCvcaxmpXKZPj25Bvq50ABvICUuQFVPCHBuU8Blhu1edJl3X-lXO8V1vUW8gpD0rBAELordA3gtcDzmy_icNfGomGaxA"/>
-<div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">89% MATCH</div>
-</div>
-<div class="p-6">
-<h4 class="font-headline-md text-on-surface mb-2">Singapore</h4>
-<p class="text-body-sm text-secondary mb-4 line-clamp-2">The pinnacle of Asian urban intelligence and logistical perfection.</p>
-<div class="flex items-center gap-2">
-<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">EFFICIENCY</span>
-<span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">LOGISTICS</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full py-stack-xl mt-stack-xl bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant">
-<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex flex-col gap-2">
-<span class="font-headline-md text-on-surface">GlobeMind AI</span>
-<span class="font-body-sm text-secondary">© 2024 GlobeMind AI. Distilled Intelligence.</span>
-</div>
-<div class="flex gap-8">
-<a class="text-body-sm text-secondary hover:text-primary hover:underline transition-all" href="#">Privacy Policy</a>
-<a class="text-body-sm text-secondary hover:text-primary hover:underline transition-all" href="#">Terms of Service</a>
-<a class="text-body-sm text-secondary hover:text-primary hover:underline transition-all" href="#">Security</a>
-<a class="text-body-sm text-secondary hover:text-primary hover:underline transition-all" href="#">Contact</a>
-</div>
-<div class="flex gap-4">
-<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-outline hover:text-primary hover:border-primary transition-all">
-<span class="material-symbols-outlined text-[20px]">share</span>
-</button>
-<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-outline hover:text-primary hover:border-primary transition-all">
-<span class="material-symbols-outlined text-[20px]">mail</span>
-</button>
-</div>
-</div>
-</footer>
-<script>
+                </div>
+            </div>
+        </div>
+        <!-- Similar Destinations Carousel -->
+        <section class="mt-stack-xl">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h3 class="font-headline-md text-on-surface">Discover Similar Destinations</h3>
+                    <p class="text-body-sm text-secondary">AI-curated recommendations based on your affinity for Japan.
+                    </p>
+                </div>
+                <div class="flex gap-2">
+                    <button
+                        class="p-2 rounded-full border border-outline-variant text-outline hover:text-primary hover:border-primary transition-all">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <button
+                        class="p-2 rounded-full border border-outline-variant text-outline hover:text-primary hover:border-primary transition-all">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <div class="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
+                <!-- Card 1 -->
+                <div
+                    class="min-w-[300px] bg-white border border-outline-variant rounded-xl overflow-hidden group cursor-pointer shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+                    <div class="h-48 overflow-hidden relative">
+                        <img alt="South Korea"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-110"
+                            data-alt="A cinematic, modern landscape of South Korea featuring the Gyeongbokgung Palace contrasted with futuristic skyscrapers in the distance. The lighting is crisp and cool-toned, echoing the minimalist light-mode aesthetic of Discoverly. High-precision architectural details and a clean sky convey a sense of intelligence and efficiency."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt8NxLW_BZNfKCcJk2dafGA4otV0XkJRW-3y5_7rmNaHcTJEmTuS5zAqHYkoSHcX-b2a6vKYwKtxwebnXXg_qGbAyJddxSiuMAYcWPUf9dkSggxXM1Typh8Z2E1GNO_cWmW6TEtzhcQOQAXZ09h2a5N7h-6Q87GMaSTxd7HzGy1UszimRPiBMNeQ78dBoPrY_7pRZxy9EV7wTRhp8zo1gWS9HgQzuyUCL8iwgOPk5mscOiCa38HJVWvZLEdTCXxkOl7eCb_BpiU8E" />
+                        <div
+                            class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">
+                            94% MATCH</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-headline-md text-on-surface mb-2">South Korea</h4>
+                        <p class="text-body-sm text-secondary mb-4 line-clamp-2">The ultimate tech-forward counterpart
+                            with a deep reverence for tradition.</p>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">TECH-HUB</span>
+                            <span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">GASTRONOMY</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="min-w-[300px] bg-white border border-outline-variant rounded-xl overflow-hidden group cursor-pointer shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+                    <div class="h-48 overflow-hidden relative">
+                        <img alt="Bali" class="w-full h-full object-cover transition-transform group-hover:scale-110"
+                            data-alt="A lush, serene shot of the rice terraces in Bali at sunrise. The lighting is golden and soft, creating a tranquil yet sophisticated mood. The image maintains a clean, minimalist professional aesthetic with a high-key color palette and focuses on the orderly beauty of nature, reflecting Discoverly's premium design philosophy."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC0MoKO5fESj1SaeebbRDf_hJ1yP12FxVYM7_YEVBCE0XiT5qfiX9W7F6FfKxBvoRwNdOPr-YLTAXSxmdrNyNR1fnmfPhL0rIphf5XYSnyEQPsYvuIHNXvfib2VcSViA0O6ii_fFM4wrZBrJYLTBqccXaAq3qoigCItXSrHcOWPtEm2R3RqXrcfNY3e3jpbD4ZLWUpkEatQf8rrDYR8YfmnAeIYQZz6K_UlZqFQsZVSMzvcSQNbcziG58xU20GNKCp7Ul51sFNoiw" />
+                        <div
+                            class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">
+                            82% MATCH</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-headline-md text-on-surface mb-2">Bali, Indonesia</h4>
+                        <p class="text-body-sm text-secondary mb-4 line-clamp-2">Ideal for spiritual rejuvenation and
+                            high-end digital nomad connectivity.</p>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">NATURE</span>
+                            <span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">SPIRITUAL</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="min-w-[300px] bg-white border border-outline-variant rounded-xl overflow-hidden group cursor-pointer shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+                    <div class="h-48 overflow-hidden relative">
+                        <img alt="Sydney" class="w-full h-full object-cover transition-transform group-hover:scale-110"
+                            data-alt="A wide panoramic shot of Sydney Harbour with the Opera House gleaming under a bright blue sky. The scene is illuminated by crisp, midday sunlight, emphasizing a clean and vibrant light-mode aesthetic. The composition is structured and architectural, conveying a premium and efficient urban atmosphere consistent with Discoverly's visual identity."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMjEr1lqChtjBAg4tvuUlMnHTlxU5EUOvshuOBI5R0c3rYhQ9eWnMN8bWsMyd7_DB5A2yrXsXLZKnytCf4PC3gu4bv8gg7Uf3Dtc7lCRec3weTGuJZMC-6IrOWeU8PKKJz3a4P-tV2wUlv_QPS4N3UgoH3P5a2qpveNG57BQ7b80jdM3RNA48rs-_YfzCk-d_1GhjejE8G94gHVOj3PPoK3JbJqdvqkaeiWuBQDYaSDvo33BLBwjHU5ZABu4iW2rbat8Bw5Z4OkQ4" />
+                        <div
+                            class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">
+                            78% MATCH</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-headline-md text-on-surface mb-2">Sydney, Australia</h4>
+                        <p class="text-body-sm text-secondary mb-4 line-clamp-2">Sophisticated urban planning with
+                            world-class logistics and coastal lifestyle.</p>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">COASTAL</span>
+                            <span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">URBAN</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="min-w-[300px] bg-white border border-outline-variant rounded-xl overflow-hidden group cursor-pointer shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+                    <div class="h-48 overflow-hidden relative">
+                        <img alt="Singapore"
+                            class="w-full h-full object-cover transition-transform group-hover:scale-110"
+                            data-alt="A minimalist architectural shot of the Singapore skyline featuring the Marina Bay Sands. The image is bright and clean, with a focus on geometric shapes and advanced urban design. The palette is dominated by soft whites and cool grays with pops of electric blue, reflecting a high-performance, enterprise-grade aesthetic."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAobyoB5ybY9WfPO9Z7kz5gv0uWpR8xEErrWd7-1SRooAh1IuMPlTxCiPHJFo9S98beldYx3t3pt3Idwprnn3pg6mskg9hOnvNap1VeCpONQpgny5LmvOWHi35eRtu1Og16SmUyOnUGWRS_jAD2C8y_JIqKAcJWKwPMQvNg8XDSchPjLGFbCvcaxmpXKZPj25Bvq50ABvICUuQFVPCHBuU8Blhu1edJl3X-lXO8V1vUW8gpD0rBAELordA3gtcDzmy_icNfGomGaxA" />
+                        <div
+                            class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary">
+                            89% MATCH</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-headline-md text-on-surface mb-2">Singapore</h4>
+                        <p class="text-body-sm text-secondary mb-4 line-clamp-2">The pinnacle of Asian urban
+                            intelligence and logistical perfection.</p>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">EFFICIENCY</span>
+                            <span class="px-2 py-1 bg-surface-container text-[10px] font-bold rounded">LOGISTICS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-stack-xl mt-stack-xl bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant">
+        <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col gap-2">
+                <span class="font-headline-md text-on-surface">Discoverly</span>
+                <span class="font-body-sm text-secondary">© 2024 Discoverly. Distilled Intelligence.</span>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-body-sm text-secondary hover:text-primary hover:underline transition-all"
+                    href="#">Privacy Policy</a>
+                <a class="text-body-sm text-secondary hover:text-primary hover:underline transition-all" href="#">Terms
+                    of Service</a>
+                <a class="text-body-sm text-secondary hover:text-primary hover:underline transition-all"
+                    href="#">Security</a>
+                <a class="text-body-sm text-secondary hover:text-primary hover:underline transition-all"
+                    href="#">Contact</a>
+            </div>
+            <div class="flex gap-4">
+                <button
+                    class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-outline hover:text-primary hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-[20px]">share</span>
+                </button>
+                <button
+                    class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-outline hover:text-primary hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-[20px]">mail</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+    <script>
         // Update Tokyo Time
         function updateTime() {
             const now = new Date();
-            const options = { 
-                timeZone: 'Asia/Tokyo', 
-                hour: '2-digit', 
-                minute: '2-digit', 
-                second: '2-digit', 
-                hour12: false 
+            const options = {
+                timeZone: 'Asia/Tokyo',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
             };
             const timeStr = new Intl.DateTimeFormat('en-US', options).format(now);
             document.getElementById('tokyo-time').innerText = timeStr;
@@ -441,13 +517,15 @@
         document.querySelectorAll('button').forEach(btn => {
             btn.addEventListener('click', () => {
                 const icon = btn.querySelector('.material-symbols-outlined');
-                if(icon && icon.textContent === 'arrow_forward') {
+                if (icon && icon.textContent === 'arrow_forward') {
                     document.querySelector('.no-scrollbar').scrollBy({ left: 320, behavior: 'smooth' });
                 }
-                if(icon && icon.textContent === 'arrow_back') {
+                if (icon && icon.textContent === 'arrow_back') {
                     document.querySelector('.no-scrollbar').scrollBy({ left: -320, behavior: 'smooth' });
                 }
             });
         });
     </script>
-</body></html>
+</body>
+
+</html>
