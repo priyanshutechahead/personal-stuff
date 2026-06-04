@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GlobeMind AI | Explore the Future of Travel</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary": "#943700",
+                        "on-secondary-container": "#626567",
+                        "on-primary-container": "#eeefff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#444749",
+                        "surface": "#faf8ff",
+                        "primary-fixed": "#dbe1ff",
+                        "outline": "#737686",
+                        "tertiary-container": "#bc4800",
+                        "surface-container": "#ededf9",
+                        "surface-bright": "#faf8ff",
+                        "outline-variant": "#c3c6d7",
+                        "surface-variant": "#e1e2ed",
+                        "on-primary-fixed": "#00174b",
+                        "background": "#faf8ff",
+                        "on-secondary-fixed": "#191c1e",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary": "#004ac6",
+                        "inverse-on-surface": "#f0f0fb",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#ffede6",
+                        "tertiary-fixed": "#ffdbcd",
+                        "secondary": "#5c5f61",
+                        "inverse-surface": "#2e3039",
+                        "surface-container-low": "#f3f3fe",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d9d9e5",
+                        "surface-tint": "#0053db",
+                        "secondary-fixed-dim": "#c4c7c9",
+                        "on-surface": "#191b23",
+                        "surface-container-high": "#e7e7f3",
+                        "on-background": "#191b23",
+                        "on-surface-variant": "#434655",
+                        "secondary-fixed": "#e0e3e5",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#2563eb",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e1e2ed",
+                        "secondary-container": "#e0e3e5",
+                        "primary-fixed-dim": "#b4c5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "stack-md": "24px",
+                        "unit": "4px",
+                        "stack-xs": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "stack-xl": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "body-sm": ["Inter"],
+                        "mono-label": ["monospace"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "mono-label": ["13px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(225, 226, 237, 0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #faf8ff;
+            color: #191b23;
+            overflow-x: hidden;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-body-lg text-body-lg">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-16">
+<div class="flex items-center gap-stack-md">
+<span class="font-display-lg text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">GlobeMind AI</span>
+<div class="hidden md:flex gap-6 ml-8">
+<a class="font-body-lg text-body-lg text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Platform</a>
+<a class="font-body-lg text-body-lg text-primary dark:text-inverse-primary font-bold border-b-2 border-primary" href="#">Destinations</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Intelligence</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors" href="#">Pricing</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center px-4 py-2 font-medium text-primary hover:bg-surface-container-low transition-all">Sign In</button>
+<button class="bg-primary-container text-on-primary px-6 py-2.5 rounded hover:opacity-90 active:scale-95 transition-all font-medium">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center overflow-hidden py-stack-xl">
+<!-- Animated Shader Background -->
+
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full grid md:grid-cols-2 gap-stack-xl items-center">
+<div class="reveal-on-scroll">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full mb-6">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Global Data V4.2 Live</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 leading-tight">
+                        Welcome to the <br/><span class="text-primary">GlobeMind</span> Experience
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+                        Explore the future of travel intelligence. Discover countries through real-time data, sentiment analysis, and AI-driven insights tailored to your unique profile.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-4 rounded font-medium hover:shadow-lg hover:shadow-primary/20 transition-all flex items-center justify-center gap-2 group">
+                            Start Exploration
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="border border-outline-variant bg-surface text-on-surface px-8 py-4 rounded font-medium hover:bg-surface-container-low transition-all flex items-center justify-center gap-2">
+                            View Intelligence Report
+                        </button>
+</div>
+<div class="mt-12 flex items-center gap-8 border-t border-outline-variant/30 pt-8">
+<div>
+<div class="font-display-lg text-headline-md text-primary">195+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Countries Analyzed</div>
+</div>
+<div class="w-px h-10 bg-outline-variant/30"></div>
+<div>
+<div class="font-display-lg text-headline-md text-primary">2.4M</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Real-time Data Points</div>
+</div>
+</div>
+</div>
+<div class="relative hidden md:block reveal-on-scroll" style="transition-delay: 200ms;">
+<div class="glass-card p-4 rounded-xl shadow-2xl relative z-20">
+<img class="rounded-lg w-full aspect-square object-cover shadow-sm" data-alt="A futuristic UI dashboard showing a 3D digital globe of the Earth glowing with data connections and neon blue travel routes. The background is a clean, minimal white tech office space with soft daylight. The style is professional and sophisticated, mirroring high-end enterprise software aesthetics with clean lines and premium typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMaxepG8KeW7FXm56k3QqTBMLRRhn3wb8xNTHC7FKUIh0q4Zm8QpNzmKeVqbZZMx5YEkUf0z4mnizHTuVGkdwKrIit88vmjxTd4Czc-6bHxTiSeedhA3s_1lO27AtvRn7tFaMhiiPJN5rbV2aohtWyXfUIiKI5MzeZ1lBh2blUZqT3hH_TGekPeJBIUbAGVhZ30DDLptC9a1MA_YqefOqA5YVkLqkIfxhwxXkdIoC1VcToF-UdQlvNbRZ1AF07rd4vHgi7PQs13LE"/>
+<div class="absolute -bottom-8 -left-8 bg-white p-6 shadow-xl border border-outline-variant rounded-lg max-w-[240px]">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Global Pulse Active</span>
+</div>
+<div class="text-body-sm text-on-surface font-medium mb-1">Sentiment Shift: Iceland</div>
+<div class="text-primary text-[20px] font-bold">+12.4% Eco-Interest</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Discovery Section ('Top Countries') -->
+<section class="py-stack-xl bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal-on-scroll">
+<div>
+<h2 class="font-display-lg text-headline-md md:text-display-lg text-on-surface mb-2">Top Countries</h2>
+<p class="text-on-surface-variant">Intelligence-backed recommendations for your next expansion or adventure.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Japan Card -->
+<div class="reveal-on-scroll bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-xl transition-all group" style="transition-delay: 100ms;">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A cinematic wide shot of Mount Fuji in Japan, framed by vibrant cherry blossom trees in full bloom. The lighting is early morning golden hour, casting a warm glow over the landscape. The atmosphere is peaceful and iconic, reflecting a blend of traditional nature and modern photographic precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhwT0R_VwLVXieszPZT9_EUewXN4dp7mn_TLowpsRbEgYBZyPuMplxaTJYX3s_KzTRytVewNxU-sWrvXoNW5Mc_fNdYwo_4_BK-rblsozxbuGwnIFK68FsYxuvP7LJDox-vY689OzAVAoeJfUCbq1P7yCwKeP6NOCqK3kvQ9L-EHx5oKth1XlqC_lsTk6tEm6MtG4_YJG62usuDHqjb0l9iV-_wJw-KWH9c0w711CK5fmPmJsQ4wrkew1LgPqv6m_gtc3xrgaWOZc"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded flex items-center gap-2">
+<img alt="Japan Flag" class="w-5 h-3.5 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOzcmZfx_88ZF2DeMATWuqgRzZl7PiXazvU2-jKcoJ78y6GSY4xitegAdmN9svMsB-84IO5GH_cst1aJ9-2BqAh0eLk8y-BXf26iwBOBAK2x0Ps5zuGgGhdWmqERqQVDRcUr7KWB_WD1vyaRnrbCMeXVas2H1K_DzJ_HWT-hXSKcWV8WOGHOflFX0_xt0k9c41vQphuEPXepVwIP1xEc0AOoECNgz1gmXEhWro-SRiIblAk-kZTMUTJxCxvQjI4SNe4TkalDYORjU"/>
+<span class="font-label-caps text-label-caps font-bold">Japan</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">Tokyo &amp; Beyond</h3>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-caps text-label-caps">Tech Hub</span>
+</div>
+</div>
+<div class="text-right">
+<div class="text-primary font-bold text-headline-md">98%</div>
+<div class="text-on-surface-variant font-label-caps text-label-caps">AI Match</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="p-3 bg-surface-container-low rounded">
+<div class="text-on-surface-variant font-label-caps text-[10px] uppercase mb-1">Safety Score</div>
+<div class="font-bold flex items-center gap-1">
+                                        A+ <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded">
+<div class="text-on-surface-variant font-label-caps text-[10px] uppercase mb-1">Connectivity</div>
+<div class="font-bold">Ultra High</div>
+</div>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-medium rounded hover:bg-primary hover:text-white transition-all">Explore Data</button>
+</div>
+</div>
+<!-- Iceland Card -->
+<div class="reveal-on-scroll bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-xl transition-all group" style="transition-delay: 200ms;">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A breathtaking view of the Aurora Borealis glowing in vivid green over a dramatic Icelandic landscape of volcanic rocks and a distant lighthouse. The scene is illuminated by the ethereal light of the Northern Lights against a deep navy sky. The aesthetic is cold, majestic, and technologically crisp." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsn5TmPXbNdKRKRvVTQPLCf6qSS6UVETkKI--_ktlB8Cjpw_ETH0Ho9dwNpRJ0vZm9cQrTTvENBI4i1Edq-tknHCFYpMz9VGAn7z-5FRQoLCXxC64U9-vkTgG_-lLC7fYTB83U9ZN92V5jGH4JNb5mRE-CuHino1g4tCQ8IKn8V1-9TFJ0KT9DKYsQ9hdsJDY4rXj3mduA-BHUSwdOcZ38s04nqGn4wKtSd1gm-O8k40ZKnnbc-saWqehO-2uVtUux9V4jqXaF-0s"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded flex items-center gap-2">
+<img alt="Iceland Flag" class="w-5 h-3.5 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnyo9LgZnlnEy89X7r4yXzXqiGUwnVNzUw9sQV44G1A--knKvJ1GeW1oIM92O_Ln5Rp2ECv3D0yefncDXKXR1tcWPd0B3XCAkmRz4PYbvrL4rsRMzMCjYOGaEy7Xrp7Kt5WA0ePgYMeuz6-SXgyxf0JU_8WPBzm0n3YgBx2OqWwn1L9H0uVZ7kSmQLLu6nGaOWtfX8sPLkaEtLxIbh_z495Cs4X62E3s-B-CFedH91czkbkGmS1zs7HGo7GOmIbIFYI88V-iICJ6g"/>
+<span class="font-label-caps text-label-caps font-bold">Iceland</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">Reykjavik Edge</h3>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-label-caps text-label-caps">Nature</span>
+</div>
+</div>
+<div class="text-right">
+<div class="text-primary font-bold text-headline-md">94%</div>
+<div class="text-on-surface-variant font-label-caps text-label-caps">AI Match</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="p-3 bg-surface-container-low rounded">
+<div class="text-on-surface-variant font-label-caps text-[10px] uppercase mb-1">Safety Score</div>
+<div class="font-bold flex items-center gap-1">
+                                        A++ <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded">
+<div class="text-on-surface-variant font-label-caps text-[10px] uppercase mb-1">Sustainability</div>
+<div class="font-bold text-emerald-600">Leader</div>
+</div>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-medium rounded hover:bg-primary hover:text-white transition-all">Explore Data</button>
+</div>
+</div>
+<!-- Switzerland Card -->
+<div class="reveal-on-scroll bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-xl transition-all group" style="transition-delay: 300ms;">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="An aerial panoramic view of the Swiss Alps, showing snow-capped peaks and a pristine turquoise alpine lake. A modern high-speed train is seen winding through a lush green valley. The image has a high-dynamic-range look with sharp details and a clean, premium travel magazine aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNQGnRWE8trwSlmX3XmY87HqeK0KJ55aHPBsmeaFiAIKr8PLoA_xuT_NunT_Nxgfi4su65k4uNq3avbCH4CLzg6bvwF0dESh0nsY2y-yizELCOPBFfi_17grLof_woC81GKmLN8kGuXmVUYE30Ibc4JQSNPGMdH1GQe9GRzHA9QdKwDCu9WYn4i4E18dxk22hRoLoFIcUPbOTpqV69ZkB2ldWhzqnfJNoDxtk93TEE3xuGktNhlIeX2kohSOb_qiNRFBQ3wtwcayA"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded flex items-center gap-2">
+<img alt="Switzerland Flag" class="w-5 h-3.5 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM6pMKQ5RW70C1nJ3YJRD6DYuz9Hti3bqwoeupE6_ZLQTHAreht-U_86VWGKcjv0Tqa_BJrqjAcvg3_KB0qDpqrb-y_Ylpl3ghnn0pJCHpWhkDiJFhOHJWMSt_nfbbkzTHVyrTMkfiJtyhh-IyTmTbF544ROxusfyeYIHR3vHFvQom82x0JNJsnm6QBGv4kimLKWQt0vwIt27CYBsADUD8d1d5x8C9FPTKQWUaDa40En-3N_xb2EEmAhzHSnk-PSC6ma_gvwunufM"/>
+<span class="font-label-caps text-label-caps font-bold">Switzerland</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md mb-1">Alpine Hub</h3>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">finance</span>
+<span class="font-label-caps text-label-caps">Stability</span>
+</div>
+</div>
+<div class="text-right">
+<div class="text-primary font-bold text-headline-md">91%</div>
+<div class="text-on-surface-variant font-label-caps text-label-caps">AI Match</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="p-3 bg-surface-container-low rounded">
+<div class="text-on-surface-variant font-label-caps text-[10px] uppercase mb-1">Safety Score</div>
+<div class="font-bold flex items-center gap-1">
+                                        A <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded">
+<div class="text-on-surface-variant font-label-caps text-[10px] uppercase mb-1">Wealth Index</div>
+<div class="font-bold">Premium</div>
+</div>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-medium rounded hover:bg-primary hover:text-white transition-all">Explore Data</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Intelligence Snapshot -->
+<section class="py-stack-xl">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid md:grid-cols-12 gap-stack-xl">
+<div class="md:col-span-4 reveal-on-scroll">
+<div class="sticky top-24">
+<h2 class="font-display-lg text-headline-md mb-6">Global Pulse</h2>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                                Our real-time neural networks process millions of global news feeds, social trends, and government policies to provide instant travel intelligence.
+                            </p>
+<div class="flex items-center gap-4 p-4 border border-primary/20 bg-primary/5 rounded-lg">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<div class="font-bold text-primary">Intelligence Level: High</div>
+<div class="text-body-sm text-on-surface-variant">Last updated 2 minutes ago</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-8 space-y-gutter">
+<!-- Snapshot Item 1 -->
+<div class="reveal-on-scroll glass-card p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors flex flex-col sm:flex-row gap-6">
+<div class="sm:w-32 h-32 bg-surface-container rounded-lg flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px] text-primary">badge</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-primary-container text-on-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Policy Alert</span>
+<span class="text-body-sm text-on-surface-variant">Global Market</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Digital Nomad Visa Trends</h3>
+<p class="text-on-surface-variant mb-4">6 new countries have announced long-term remote work visas this quarter, with Portugal showing the highest conversion rates from visitors to residents.</p>
+<div class="flex items-center gap-4 text-body-sm">
+<span class="flex items-center gap-1 font-medium text-emerald-600"><span class="material-symbols-outlined text-[16px]">trending_up</span> Positive Impact</span>
+<a class="text-primary hover:underline font-medium" href="#">Read Full Analysis</a>
+</div>
+</div>
+</div>
+<!-- Snapshot Item 2 -->
+<div class="reveal-on-scroll glass-card p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors flex flex-col sm:flex-row gap-6">
+<div class="sm:w-32 h-32 bg-surface-container rounded-lg flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px] text-primary">train</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-tertiary-container text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">Infrastructure</span>
+<span class="text-body-sm text-on-surface-variant">European Sector</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">New High-Speed Rail Connections</h3>
+<p class="text-on-surface-variant mb-4">France and Germany have successfully expanded their trans-border network, reducing travel time between major tech hubs by 40%.</p>
+<div class="flex items-center gap-4 text-body-sm">
+<span class="flex items-center gap-1 font-medium text-primary"><span class="material-symbols-outlined text-[16px]">speed</span> Efficiency Gain</span>
+<a class="text-primary hover:underline font-medium" href="#">View Connection Map</a>
+</div>
+</div>
+</div>
+<!-- Snapshot Item 3 -->
+<div class="reveal-on-scroll glass-card p-6 rounded-xl border border-outline-variant hover:border-primary transition-colors flex flex-col sm:flex-row gap-6">
+<div class="sm:w-32 h-32 bg-surface-container rounded-lg flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[48px] text-primary">energy_savings_leaf</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">Eco-Intelligence</span>
+<span class="text-body-sm text-on-surface-variant">Global Sustainability</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Net-Zero Tourism Surge</h3>
+<p class="text-on-surface-variant mb-4">New sentiment data suggests that eco-friendly initiatives now drive 34% of travel decisions for high-net-worth individuals.</p>
+<div class="flex items-center gap-4 text-body-sm">
+<span class="flex items-center gap-1 font-medium text-emerald-600"><span class="material-symbols-outlined text-[16px]">psychology</span> High Sentiment</span>
+<a class="text-primary hover:underline font-medium" href="#">Market Report</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline w-full py-stack-xl">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid md:grid-cols-4 gap-stack-xl mb-12">
+<div class="md:col-span-2">
+<span class="font-display-lg text-headline-md font-bold text-primary dark:text-inverse-primary mb-4 block">GlobeMind AI</span>
+<p class="text-on-surface-variant max-w-sm mb-6">
+                        Architecting the future of travel intelligence with real-time data science and predictive analytics.
+                    </p>
+<div class="flex gap-4">
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-4">Resources</h4>
+<ul class="space-y-3">
+<li><a class="text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Documentation</a></li>
+<li><a class="text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all" href="#">API Access</a></li>
+<li><a class="text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Case Studies</a></li>
+<li><a class="text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Intelligence Hub</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-4">Legal</h4>
+<ul class="space-y-3">
+<li><a class="text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Security</a></li>
+<li><a class="text-on-secondary-container hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center border-t border-outline-variant/30 pt-8 gap-stack-xs">
+<p class="font-body-sm text-body-sm text-on-secondary-container">© 2024 GlobeMind AI. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="text-body-sm text-on-secondary-container">System Status: <span class="text-emerald-500 font-medium">Operational</span></span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Hover effect for cards
+        document.querySelectorAll('.glass-card, .bg-white.border-outline-variant').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>
