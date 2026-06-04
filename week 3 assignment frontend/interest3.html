@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GlobeMind AI - Onboarding Step 2</title>
+<title>Discoverly - Onboarding Step 2</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -127,7 +127,7 @@
 <header class="w-full bg-surface-container-lowest border-b border-outline-variant py-stack-md sticky top-0 z-50">
 <div class="max-w-container-max mx-auto px-gutter flex flex-col items-center">
 <div class="w-full flex justify-between items-center mb-4">
-<span class="text-primary font-headline-md font-bold tracking-tight">GlobeMind AI</span>
+<span class="text-primary font-headline-md font-bold tracking-tight">Discoverly</span>
 <span class="text-label-caps font-label-caps text-on-surface-variant">Step 2 of 4</span>
 </div>
 <!-- Progress Bar -->
@@ -193,21 +193,28 @@
 <!-- Navigation Footer -->
 <footer class="w-full bg-surface border-t border-outline-variant py-stack-md mt-auto">
 <div class="max-w-container-max mx-auto px-gutter flex justify-between items-center">
-<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-medium" onclick="history.back()">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-medium" onclick="window.location.href='interest4.html'">
 <span class="material-symbols-outlined">arrow_back</span>
 <span>Back</span>
 </button>
 <div class="flex items-center gap-stack-md">
-<button class="text-secondary font-medium hover:text-on-surface transition-colors">Skip</button>
-<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-medium shadow-sm hover:opacity-90 active:scale-95 transition-all">
-                    Next
-                </button>
+<button class="text-secondary font-medium hover:text-on-surface transition-colors" onclick="window.location.href='interest2.html'">Skip</button>
 </div>
 </div>
 </footer>
 <script>
         function toggleSelection(element) {
             element.classList.toggle('selected');
+            const icon = element.querySelector('.material-symbols-outlined');
+            if (element.classList.contains('selected')) {
+                if (icon) icon.style.fontVariationSettings = "'FILL' 1";
+                // Automatically redirect to the next page after selection
+                setTimeout(() => {
+                    window.location.href = 'interest2.html';
+                }, 400);
+            } else {
+                if (icon) icon.style.fontVariationSettings = "'FILL' 0";
+            }
         }
 
         // Add visual weight to active icons using the system logic
