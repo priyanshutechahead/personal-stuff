@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GlobeMind AI — Personalized Country Intelligence Dashboard</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#c4c7c9",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-secondary-fixed": "#191c1e",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#360f00",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "surface-container": "#ededf9",
+                    "tertiary": "#943700",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#004ac6",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "inverse-primary": "#b4c5ff",
+                    "secondary-fixed": "#e0e3e5",
+                    "surface-tint": "#0053db",
+                    "surface-bright": "#faf8ff",
+                    "secondary-container": "#e0e3e5",
+                    "background": "#faf8ff",
+                    "on-secondary-container": "#626567",
+                    "on-background": "#191b23",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#2e3039",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-variant": "#e1e2ed",
+                    "surface": "#faf8ff",
+                    "surface-container-high": "#e7e7f3",
+                    "tertiary-container": "#bc4800",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary-container": "#eeefff",
+                    "secondary": "#5c5f61",
+                    "on-surface-variant": "#434655",
+                    "outline-variant": "#c3c6d7",
+                    "on-primary-fixed": "#00174b",
+                    "surface-container-low": "#f3f3fe",
+                    "surface-container-highest": "#e1e2ed",
+                    "inverse-on-surface": "#f0f0fb",
+                    "on-surface": "#191b23",
+                    "on-error": "#ffffff",
+                    "outline": "#737686",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "primary-container": "#2563eb",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-dim": "#d9d9e5",
+                    "on-secondary-fixed-variant": "#444749",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-xs": "8px",
+                    "stack-md": "24px",
+                    "unit": "4px",
+                    "container-max": "1280px",
+                    "stack-xl": "64px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Inter"],
+                    "display-lg-mobile": ["Space Grotesk"],
+                    "mono-label": ["monospace"],
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Space Grotesk"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "mono-label": ["13px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf8ff;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0, 74, 198, 0.015) 0%, transparent 60%),
+                url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='15' fill='%23004ac6' fill-opacity='0.02' font-family='Space Grotesk' font-size='10'%3EGlobeMind AI%3C/text%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        .hover-lift {
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.02);
+        }
+    </style>
+</head>
+<body class="text-on-background min-h-screen">
+<!-- SideNavBar Integration -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-stack-md z-50">
+<div class="px-gutter mb-stack-xl">
+<h1 class="text-headline-md font-headline-md font-bold text-primary">GlobeMind AI</h1>
+<p class="text-label-caps font-label-caps text-secondary uppercase tracking-widest mt-1">Premium Travel Intelligence</p>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="bg-primary-fixed text-primary border-l-2 border-primary px-gutter py-3 flex items-center space-x-3 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-caps font-label-caps">Dashboard</span>
+</div>
+<div class="text-secondary hover:bg-surface-container-low px-gutter py-3 flex items-center space-x-3 cursor-pointer transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-label-caps font-label-caps">Intelligence</span>
+</div>
+<div class="text-secondary hover:bg-surface-container-low px-gutter py-3 flex items-center space-x-3 cursor-pointer transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-label-caps font-label-caps">Itineraries</span>
+</div>
+<div class="text-secondary hover:bg-surface-container-low px-gutter py-3 flex items-center space-x-3 cursor-pointer transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-label-caps font-label-caps">Analytics</span>
+</div>
+<div class="text-secondary hover:bg-surface-container-low px-gutter py-3 flex items-center space-x-3 cursor-pointer transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-label-caps font-label-caps">Support</span>
+</div>
+</nav>
+<div class="px-gutter mt-auto pt-stack-md">
+<div class="space-y-1">
+<div class="text-secondary hover:bg-surface-container-low px-gutter py-2 flex items-center space-x-3 cursor-pointer rounded-lg transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-label-caps font-label-caps">Settings</span>
+</div>
+<div class="text-secondary hover:bg-surface-container-low px-gutter py-2 flex items-center space-x-3 cursor-pointer rounded-lg transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-label-caps font-label-caps">Logout</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="ml-64 flex-1">
+<!-- TopNavBar Integration -->
+<header class="w-full h-16 bg-surface border-b border-outline-variant sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
+<div class="flex items-center space-x-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search destinations, insights, or plans..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="settings">settings</span>
+<div class="flex items-center space-x-3 pl-6 border-l border-outline-variant">
+<div class="text-right">
+<p class="text-label-caps font-label-caps text-on-surface">John Doe</p>
+<p class="text-[10px] text-secondary">Tech Explorer</p>
+</div>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy2Irl7e6wHid8ooNGqDqLo8Dr9nrd-wiwGd8L9OyvpW-bjaU60KR6_jq3FI6pBpb2-NAY3JOeaEZWgiQ3LNkr9KuEDuNeSEHeJgUvMUDMc3pbdsxqFVqnKc3F7w0gOowe2x39CaY4j6p5o3JVCOnasoZMzlHL3fLPc_U8slq72Qc-AcUDlw_okLaHw8JP9GqNgzxjRCztHqOAZqpuy1-u1Wf8r7-xMhhV2dtZ0SoU43MMj4hU19R8QOcqqD1ceK4Ide91jgbS8dw"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<div class="p-gutter max-w-container-max mx-auto space-y-stack-xl">
+<!-- Header Section with Country Switcher -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="text-display-lg font-display-lg text-on-background">Welcome back, John 👋</h2>
+<p class="text-body-lg font-body-lg text-secondary mt-1">Your AI-curated country exploration experience.</p>
+</div>
+<div class="w-full max-w-xs">
+<label class="text-label-caps text-secondary uppercase mb-2 block">Switch Destination</label>
+<div class="relative">
+<select class="w-full pl-4 pr-10 py-3 bg-white border border-outline-variant rounded-xl text-body-sm font-semibold appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20">
+<option selected="">Japan</option>
+<option>South Korea</option>
+<option>Singapore</option>
+<option>Taiwan</option>
+<option>Germany</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-secondary" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</section><div class="w-full bg-primary/5 border border-primary/20 rounded-xl px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 mb-stack-md">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</div>
+<p class="text-body-sm font-body-lg text-on-surface-variant">
+<span class="font-bold font-headline-md text-primary">Tailored for your Tech Explorer Persona</span> — We've prioritized real-time maglev transit trials, high-speed 5G nodes, and autonomous tech hubs for your mapping.
+    </p>
+</div>
+<button class="whitespace-nowrap px-6 py-2 bg-primary text-white rounded-full font-label-caps text-sm hover:bg-primary/90 transition-all active:scale-95">
+    Optimize Feed
+  </button>
+</div>
+<!-- Split Hero Country Card -->
+<div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden bento-grid">
+<!-- Left: Media & Branding -->
+<div class="col-span-12 lg:col-span-7 relative h-[400px] lg:h-auto overflow-hidden">
+<img alt="Tokyo skyline at sunset" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIdIEiZgYG7hTmaqXgwK-YkRUMHLdV21eJhn3VPCKGkeGeS4YPFTlT_HO950wKjd_P7KwLSYZ0a4F_waQzB02QDXeVk-DwGRa8n-EgPc3d2L2u-4MVct2rTeyKy7MtdqMOoFceB-d4rYnd9gnvOFMIyuhiVTEHbCO9wBD0Ya6ogfjbA4LYIQ5ELVkYzlGO6IoHriHKGG5WG6Gcg6_8cn9iwkGI8aZhg6U7jD7luOcThoSS8wGB_AhrNkrKf4ieUugW34xkqkVaPdw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<div class="flex items-center space-x-3 mb-2">
+<span class="text-headline-md font-bold">GlobeMind AI</span>
+</div>
+<p class="text-body-sm italic opacity-90">"Distilled Intelligence."</p>
+<p class="mt-4 text-body-lg font-medium opacity-80">Land of the Rising Sun</p>
+</div>
+</div>
+<!-- Right: Information & Search -->
+<div class="col-span-12 lg:col-span-5 p-8 flex flex-col justify-between">
+<div class="space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-headline-md font-bold mb-1">Explore Cities</h3>
+<p class="text-body-sm text-secondary">Discover major urban centers</p>
+</div>
+<div class="bg-primary-container/10 border border-primary/20 px-4 py-2 rounded-xl text-center">
+<p class="text-[10px] text-primary font-bold uppercase">Safety Score</p>
+<p class="text-headline-md font-bold text-primary">91</p>
+</div>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm" data-icon="search">search</span>
+<input class="w-full pl-9 pr-4 py-2.5 bg-surface-container-low border border-outline-variant rounded-lg text-body-sm" placeholder="Search cities in Japan..." type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center space-x-2 p-3 bg-surface border border-outline-variant rounded-xl hover:border-primary transition-colors text-left group">
+<span class="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform"></span>
+<span class="text-body-sm font-medium">Tokyo</span>
+</button>
+<button class="flex items-center space-x-2 p-3 bg-surface border border-outline-variant rounded-xl hover:border-primary transition-colors text-left group">
+<span class="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform"></span>
+<span class="text-body-sm font-medium">Kyoto</span>
+</button>
+<button class="flex items-center space-x-2 p-3 bg-surface border border-outline-variant rounded-xl hover:border-primary transition-colors text-left group">
+<span class="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform"></span>
+<span class="text-body-sm font-medium">Osaka</span>
+</button>
+<button class="flex items-center space-x-2 p-3 bg-surface border border-outline-variant rounded-xl hover:border-primary transition-colors text-left group">
+<span class="w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform"></span>
+<span class="text-body-sm font-medium">Sapporo</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-outline-variant">
+<div>
+<p class="text-label-caps text-secondary mb-1">Capital</p>
+<p class="text-body-lg font-bold">Tokyo</p>
+</div>
+<div>
+<p class="text-label-caps text-secondary mb-1">Population</p>
+<p class="text-body-lg font-bold">125.7M</p>
+</div>
+<div>
+<p class="text-label-caps text-secondary mb-1">Currency</p>
+<p class="text-body-lg font-bold">JPY (¥)</p>
+</div>
+<div>
+<p class="text-label-caps text-secondary mb-1">GDP</p>
+<p class="text-body-lg font-bold">$4.9T</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Why People Love Section -->
+<section class="space-y-stack-md"><div class="flex items-baseline justify-between">
+<h3 class="text-headline-md font-headline-md">Why People Love Japan</h3>
+<p class="text-primary font-semibold text-body-sm cursor-pointer hover:underline">View intelligence report</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4" id="intelligence-tabs">
+<div class="bg-primary/5 border border-primary p-4 rounded-xl flex items-center space-x-3 cursor-pointer transition-all duration-200" data-tab="tech">
+<span class="material-symbols-outlined text-primary" data-icon="memory">memory</span>
+<span class="text-body-sm font-medium">Technology Hub</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 rounded-xl flex items-center space-x-3 hover:bg-surface-container-low cursor-pointer transition-all duration-200" data-tab="culture">
+<span class="material-symbols-outlined text-primary" data-icon="temple_buddhist">temple_buddhist</span>
+<span class="text-body-sm font-medium">Rich Culture</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 rounded-xl flex items-center space-x-3 hover:bg-surface-container-low cursor-pointer transition-all duration-200" data-tab="food">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant">restaurant</span>
+<span class="text-body-sm font-medium">Amazing Food</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 rounded-xl flex items-center space-x-3 hover:bg-surface-container-low cursor-pointer transition-all duration-200" data-tab="clean">
+<span class="material-symbols-outlined text-primary" data-icon="domain">domain</span>
+<span class="text-body-sm font-medium">Clean Cities</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 rounded-xl flex items-center space-x-3 hover:bg-surface-container-low cursor-pointer transition-all duration-200" data-tab="safety">
+<span class="material-symbols-outlined text-primary" data-icon="shield">shield</span>
+<span class="text-body-sm font-medium">High Safety</span>
+</div>
+</div>
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-6 transition-all duration-300" id="insights-box">
+<div class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="info">info</span>
+<div>
+<p class="font-bold font-headline-md text-on-surface mb-1" id="insight-title">Technology Hub Intelligence</p>
+<p class="text-body-sm text-secondary" id="insight-content">Kyoto &amp; Tokyo regional 5G density is at 98.4%. Top recommended spot: Dawn Avatar Robot Cafe.</p>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const tabs = document.querySelectorAll('[data-tab]');
+    const box = document.getElementById('insights-box');
+    const title = document.getElementById('insight-title');
+    const content = document.getElementById('insight-content');
+    
+    const data = {
+      tech: { title: 'Technology Hub Intelligence', text: 'Kyoto & Tokyo regional 5G density is at 98.4%. Top recommended spot: Dawn Avatar Robot Cafe.' },
+      culture: { title: 'Rich Culture Intelligence', text: 'Traditional tea ceremonies now integrated with AR guidance in Kyoto. 15% increase in digital heritage tours.' },
+      food: { title: 'Amazing Food Intelligence', text: 'Michelin-starred Ramen availability is up 12% in Shinjuku. AI-driven reservation systems now standard in Ginza.' },
+      clean: { title: 'Clean Cities Intelligence', text: 'Tokyo maintains a 99.8% waste processing efficiency. New autonomous street cleaning bots deployed in Shibuya.' },
+      safety: { title: 'High Safety Intelligence', text: 'Japan remains in the top 10 safest global destinations. Real-time emergency response times averaged 3.2 minutes this quarter.' }
+    };
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-primary/5', 'border-primary');
+          t.classList.add('bg-white', 'border-outline-variant');
+        });
+        tab.classList.add('bg-primary/5', 'border-primary');
+        tab.classList.remove('bg-white', 'border-outline-variant');
+        
+        const key = tab.getAttribute('data-tab');
+        box.style.opacity = '0';
+        setTimeout(() => {
+          title.textContent = data[key].title;
+          content.textContent = data[key].text;
+          box.style.opacity = '1';
+        }, 150);
+      });
+    });
+  })();
+</script></section>
+<!-- Best Places Carousel -->
+<section class="space-y-stack-md">
+<h3 class="text-headline-md font-headline-md">Best Places To Visit</h3>
+<div class="flex overflow-x-auto space-x-6 pb-6 custom-scrollbar">
+<div class="flex-shrink-0 w-64 group cursor-pointer" id="mt-fuji-card">
+<div class="h-80 rounded-xl overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrk2E-9xA5gwyDTNyQggFOcimlI9ZEmmyHusKyw0_kQ9uxeq_SNhzfvkti5dJw9nwUFTqKlDGiWgM62mwGbrZOVoeNdXnQW3wlMGL5gpVef2oj-GU2z4ityDG4xbhQuyVpWZiVbqI4KQ2S7kQMLtcQHn5fg5X7Tui5Vw2B_wN4VX_gSLQODrCHd2dI5O91YfgZndJFg9mBK3BtK9i2YMwZ6SyNpEBftiExERPUB5Aco5hEUjMiSpKLOn06B0iN8d25lkNIi8XgFDU"/>
+</div>
+<p class="font-bold text-body-lg">Mount Fuji</p>
+<p class="text-secondary text-body-sm">Iconic Volcano &amp; Sacred Site</p>
+</div>
+<div class="flex-shrink-0 w-64 group cursor-pointer">
+<div class="h-80 rounded-xl overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVeKScM1NFnOxGVv9-M-lQXAKvq0lh1LM-I5TfrlArt9VLekjGPC7zCf-sxut9YTQ2VFHatw3CPSApzk8copuUAaKJDurFL1M5R6qd_o8TMMt97HdoXKhvn5SX01yreiiz1O4V86iXiG6AQSQF1X4s8uNP7f0BlZEuG25F-ZPAAZqYwTdW7RikU3cAMWvS-iv9jObhObtzx2f-pQ6E9S8m2MiPsklqaPiPts8xiGuDlR2J5q9sk7O4GwislLrAOCxM2NTWP6vLX68"/>
+</div>
+<p class="font-bold text-body-lg">Tokyo Tower</p>
+<p class="text-secondary text-body-sm">Skyline Landmark</p>
+</div>
+<div class="flex-shrink-0 w-64 group cursor-pointer">
+<div class="h-80 rounded-xl overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdPHt8-4Kc-AI_7ksK_JEqN5J-U0PsgCRVJukxDdN51TrbQm4hK0TNGncLSxZuvb4JCkEs3k4tUlW-C1k4NYCIzPVmNGx15QBTpiAWQWhEERBGvb5Tgdy5fIjChqQKj1OIdI3WMPnRi6v3BhmZuXXtFb88ZCxH5EvR4RFgQDmT7xNbzHoo3JsKcRKdNDJ0NdVgloSF1gwpVilb41ZmES02jgzSqcgWKTq5vlYKHynfVxujNt2I8IADo6h7-FgtsobtWQS1FtQ6sqU"/>
+</div>
+<p class="font-bold text-body-lg">Kyoto Temples</p>
+<p class="text-secondary text-body-sm">Cultural Heart of Japan</p>
+</div>
+<div class="flex-shrink-0 w-64 group cursor-pointer">
+<div class="h-80 rounded-xl overflow-hidden mb-3">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Hw4C5fbf21V4odQaSmgvarYYfyvOMd5LrbytsH2aIv0Pi-2g3bIp6h_dRZDOxBbck6RWfJ1RY-3zhhtWKOehdwEDpMOv7dKuLCiKfNlWW6dYdhl5DH7WgTURWIAnZn0azKzQOXNpdZ2QCOL9uyNpxuYnQ1enySbT3nxSgNfLxkwGNCpTTRFEhxhmqmtzTPNMSn5IZod2z1xk4DGb4g5uFb3OFKvlqOVonRj2J8h9dKzSAoHT-P-5fn8dWUUpifbKxWV2X1DBLFY"/>
+</div>
+<p class="font-bold text-body-lg">Osaka Castle</p>
+<p class="text-secondary text-body-sm">Samurai Heritage</p>
+</div>
+</div>
+</section>
+<!-- Country Intelligence Feed -->
+<section class="space-y-stack-md">
+<div class="flex items-baseline justify-between">
+<h3 class="text-headline-md font-headline-md">What's Going On: Real-time Intelligence</h3>
+<p class="text-secondary text-body-sm">Updated 12 minutes ago</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white border border-outline-variant p-6 rounded-2xl hover-lift">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase">Tech</span>
+<span class="text-secondary text-[10px]">2h ago</span>
+</div>
+<h4 class="font-bold text-body-lg mb-2">New Maglev Trials</h4>
+<p class="text-body-sm text-secondary line-clamp-3">Japan completes successful high-speed maglev tests between Tokyo and Nagoya, cutting travel time by 40%.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="text-[10px] text-secondary">Verified Insight</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="bg-white border border-outline-variant p-6 rounded-2xl hover-lift">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-tertiary/10 text-tertiary text-[10px] font-bold px-2 py-1 rounded uppercase">Visa</span>
+<span class="text-secondary text-[10px]">5h ago</span>
+</div>
+<h4 class="font-bold text-body-lg mb-2">Digital Nomad Visa</h4>
+<p class="text-body-sm text-secondary line-clamp-3">Enhanced guidelines released for the 6-month nomad visa, allowing tech explorers easier entry.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="text-[10px] text-secondary">Policy Alert</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="bg-white border border-outline-variant p-6 rounded-2xl hover-lift">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded uppercase">Trending</span>
+<span class="text-secondary text-[10px]">8h ago</span>
+</div>
+<h4 class="font-bold text-body-lg mb-2">Robot Cafe Surge</h4>
+<p class="text-body-sm text-secondary line-clamp-3">Akihabara sees 20% increase in autonomous service cafes, a top pick for your travel personality.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="text-[10px] text-secondary">Market Trend</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="bg-white border border-outline-variant p-6 rounded-2xl hover-lift">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase">Logistics</span>
+<span class="text-secondary text-[10px]">1d ago</span>
+</div>
+<h4 class="font-bold text-body-lg mb-2">Smart Luggage Ports</h4>
+<p class="text-body-sm text-secondary line-clamp-3">Major stations now feature AI-driven luggage transfers to hotels, simplifying urban travel.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="text-[10px] text-secondary">Efficiency Update</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Intelligence Widgets Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Weather -->
+<div class="bg-white border border-outline-variant p-stack-md rounded-xl">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-label-caps text-secondary uppercase">Tokyo Weather</p>
+<h4 class="text-display-lg-mobile font-bold mt-1">22°C</h4>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="wb_sunny">wb_sunny</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-body-sm text-secondary">
+<div class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="water_drop">water_drop</span>
+<span>45% Humid</span>
+</div>
+<div class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="light_mode">light_mode</span>
+<span>UV 4</span>
+</div>
+</div>
+</div>
+<!-- Air Quality -->
+<div class="bg-white border border-outline-variant p-stack-md rounded-xl flex flex-col items-center justify-center relative overflow-hidden">
+<p class="text-label-caps text-secondary uppercase absolute top-4 left-6">Air Quality</p>
+<div class="relative w-24 h-24 mt-4">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<path class="text-surface-container stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="text-primary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="84, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-headline-md font-bold">42</span>
+<span class="text-[10px] text-secondary">AQI</span>
+</div>
+</div>
+<p class="text-body-sm text-primary font-bold mt-4">Good Condition</p>
+</div>
+<!-- Currency -->
+<div class="bg-white border border-outline-variant p-stack-md rounded-xl">
+<p class="text-label-caps text-secondary uppercase mb-4">Live Exchange</p>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center space-x-2">
+<span class="text-body-lg font-bold">1,000</span>
+<span class="text-secondary">INR</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="sync_alt">sync_alt</span>
+<div class="flex items-center space-x-2">
+<span class="text-body-lg font-bold">1,700</span>
+<span class="text-secondary">JPY</span>
+</div>
+</div>
+<div class="text-[10px] text-secondary bg-surface-container-low px-2 py-1 rounded">Last updated 1m ago</div>
+</div>
+</div>
+<!-- Time -->
+<div class="bg-primary-container p-stack-md rounded-xl text-white">
+<p class="text-label-caps text-white/70 uppercase mb-4">Current JST Time</p>
+<h4 class="text-display-lg font-headline-md font-bold" id="live-clock">20:45</h4>
+<p class="text-body-sm text-white/70 mt-1">Thursday, Oct 24</p>
+</div>
+</section>
+<!-- Discover Similar Destinations -->
+<section class="space-y-stack-md pb-stack-xl">
+<h3 class="text-headline-md font-headline-md">Discover Similar Destinations</h3>
+<div class="flex overflow-x-auto space-x-6 pb-4 custom-scrollbar">
+<div class="flex-shrink-0 w-72 bg-white border border-outline-variant p-5 rounded-2xl hover-lift cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-6 bg-surface-container-low rounded-sm flex items-center justify-center overflow-hidden border border-outline-variant">
+<div class="w-full h-full flex flex-col">
+<div class="h-1/2 bg-white flex items-center justify-center"><div class="w-1 h-1 rounded-full bg-red-600"></div></div>
+<div class="h-1/2 bg-white"></div>
+</div>
+</div>
+<span class="font-bold text-body-lg">South Korea</span>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded">96% Match</span>
+</div>
+<p class="text-body-sm text-secondary mb-4">Top pick for Tech Explorers. Leading in smart city infrastructure and modern urban lifestyle.</p>
+<span class="text-primary text-body-sm font-semibold flex items-center">Explore Intelligence <span class="material-symbols-outlined ml-1 text-sm" data-icon="chevron_right">chevron_right</span></span>
+</div>
+<div class="flex-shrink-0 w-72 bg-white border border-outline-variant p-5 rounded-2xl hover-lift cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-6 bg-red-600 relative overflow-hidden rounded-sm">
+<div class="absolute inset-0 flex items-center justify-center text-[6px] text-white">★</div>
+</div>
+<span class="font-bold text-body-lg">Singapore</span>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded">92% Match</span>
+</div>
+<p class="text-body-sm text-secondary mb-4">Premium smart city integration. Exceptional cleanliness and advanced urban technology.</p>
+<span class="text-primary text-body-sm font-semibold flex items-center">Explore Intelligence <span class="material-symbols-outlined ml-1 text-sm" data-icon="chevron_right">chevron_right</span></span>
+</div>
+<div class="flex-shrink-0 w-72 bg-white border border-outline-variant p-5 rounded-2xl hover-lift cursor-pointer">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-6 bg-white border border-outline-variant relative overflow-hidden rounded-sm">
+<div class="absolute top-0 left-0 w-1/2 h-1/2 bg-blue-900 flex items-center justify-center text-[4px] text-white">★</div>
+</div>
+<span class="font-bold text-body-lg">Taiwan</span>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded">89% Match</span>
+</div>
+<p class="text-body-sm text-secondary mb-4">The heart of global semiconductor tech. Vibrant food culture and high-tech urban centers.</p>
+<span class="text-primary text-body-sm font-semibold flex items-center">Explore Intelligence <span class="material-symbols-outlined ml-1 text-sm" data-icon="chevron_right">chevron_right</span></span>
+</div>
+</div>
+</section>
+<!-- Footer Integration -->
+<footer class="border-t border-outline-variant pt-stack-md pb-stack-md">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-gutter w-full">
+<p class="text-body-sm text-secondary">© 2024 GlobeMind AI. Distilled Intelligence.</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a class="text-label-caps text-secondary hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-label-caps text-secondary hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-label-caps text-secondary hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</div>
+</main>
+<!-- Floating UI: Assistant -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-all" id="chat-toggle">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+</button>
+<!-- Mini Chat Window -->
+<div class="absolute bottom-20 right-0 w-80 bg-surface border border-outline-variant rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 opacity-0 pointer-events-none translate-y-4" id="chat-window">
+<div class="bg-primary p-4 flex justify-between items-center text-white">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined" data-icon="robot_2">robot_2</span>
+<p class="font-bold">GlobeMind AI Assistant</p>
+</div>
+<span class="material-symbols-outlined cursor-pointer" data-icon="close" id="close-chat">close</span>
+</div>
+<div class="p-4 h-64 overflow-y-auto bg-surface-container-low text-body-sm space-y-4">
+<div class="bg-white p-3 rounded-xl rounded-tl-none border border-outline-variant max-w-[80%]">
+                    Hello John! Ready to dive into the intelligence feed for Japan? I've spotted some interesting tech trends in Kyoto today.
+                </div>
+</div>
+<div class="p-4 bg-surface border-t border-outline-variant flex items-center space-x-2">
+<input class="flex-1 bg-surface-container-low border-none rounded-lg px-3 py-2 text-body-sm focus:ring-1 focus:ring-primary" placeholder="Ask anything..." type="text"/>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="send">send</span>
+</div>
+</div>
+</div>
+<!-- Premium Interactive Modal Popup -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 overflow-hidden" id="places-modal">
+<!-- Overlay -->
+<div class="absolute inset-0 bg-black/20 backdrop-blur-xl transition-opacity duration-300 ease-out" id="modal-overlay"></div>
+<!-- Container -->
+<div class="relative w-full max-w-5xl bg-surface rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 ease-out flex flex-col max-h-[90vh]">
+<!-- Modal Header -->
+<div class="p-6 md:p-8 flex justify-between items-center border-b border-outline-variant shrink-0">
+<div>
+<h3 class="text-display-lg-mobile md:text-headline-md font-bold font-display-lg text-on-surface">Exploring Mount Fuji</h3>
+<div class="flex items-center mt-1 space-x-2">
+<svg class="w-4 h-4 text-red-600 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+<p class="text-body-sm text-secondary font-medium">Curated YouTube Intelligence Feed</p>
+</div>
+</div>
+<button class="w-12 h-12 rounded-full flex items-center justify-center hover:bg-surface-container-low text-outline transition-colors" id="close-modal">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+</div>
+<!-- Content Grid -->
+<div class="p-6 md:p-8 overflow-y-auto custom-scrollbar flex-1">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Video Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-2xl overflow-hidden mb-4 shadow-sm">
+<img alt="Japan Travel Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrk2E-9xA5gwyDTNyQggFOcimlI9ZEmmyHusKyw0_kQ9uxeq_SNhzfvkti5dJw9nwUFTqKlDGiWgM62mwGbrZOVoeNdXnQW3wlMGL5gpVef2oj-GU2z4ityDG4xbhQuyVpWZiVbqI4KQ2S7kQMLtcQHn5fg5X7Tui5Vw2B_wN4VX_gSLQODrCHd2dI5O91YfgZndJFg9mBK3BtK9i2YMwZ6SyNpEBftiExERPUB5Aco5hEUjMiSpKLOn06B0iN8d25lkNIi8XgFDU"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center scale-75 group-hover:scale-100 transition-transform shadow-xl">
+<span class="material-symbols-outlined fill-1" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-1 bg-black/80 text-white text-[10px] font-bold rounded">12:45</div>
+</div>
+<h4 class="font-bold text-body-lg leading-tight mb-2 group-hover:text-primary transition-colors">Japan Travel: 10 Days in the Land of the Rising Sun</h4>
+<div class="flex items-center justify-between text-[11px] text-secondary font-medium">
+<span>Globetrotter Pro</span>
+<span>2.4M views</span>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-2xl overflow-hidden mb-4 shadow-sm">
+<img alt="Mount Fuji Guide Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIdIEiZgYG7hTmaqXgwK-YkRUMHLdV21eJhn3VPCKGkeGeS4YPFTlT_HO950wKjd_P7KwLSYZ0a4F_waQzB02QDXeVk-DwGRa8n-EgPc3d2L2u-4MVct2rTeyKy7MtdqMOoFceB-d4rYnd9gnvOFMIyuhiVTEHbCO9wBD0Ya6ogfjbA4LYIQ5ELVkYzlGO6IoHriHKGG5WG6Gcg6_8cn9iwkGI8aZhg6U7jD7luOcThoSS8wGB_AhrNkrKf4ieUugW34xkqkVaPdw"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center scale-75 group-hover:scale-100 transition-transform shadow-xl">
+<span class="material-symbols-outlined fill-1" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-1 bg-black/80 text-white text-[10px] font-bold rounded">08:15</div>
+</div>
+<h4 class="font-bold text-body-lg leading-tight mb-2 group-hover:text-primary transition-colors">Mount Fuji Guide: Best Viewing Spots</h4>
+<div class="flex items-center justify-between text-[11px] text-secondary font-medium">
+<span>Tokyo Insiders</span>
+<span>840K views</span>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video rounded-2xl overflow-hidden mb-4 shadow-sm">
+<img alt="Hidden Kyoto Thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdPHt8-4Kc-AI_7ksK_JEqN5J-U0PsgCRVJukxDdN51TrbQm4hK0TNGncLSxZuvb4JCkEs3k4tUlW-C1k4NYCIzPVmNGx15QBTpiAWQWhEERBGvb5Tgdy5fIjChqQKj1OIdI3WMPnRi6v3BhmZuXXtFb88ZCxH5EvR4RFgQDmT7xNbzHoo3JsKcRKdNDJ0NdVgloSF1gwpVilb41ZmES02jgzSqcgWKTq5vlYKHynfVxujNt2I8IADo6h7-FgtsobtWQS1FtQ6sqU"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center scale-75 group-hover:scale-100 transition-transform shadow-xl">
+<span class="material-symbols-outlined fill-1" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-1 bg-black/80 text-white text-[10px] font-bold rounded">15:30</div>
+</div>
+<h4 class="font-bold text-body-lg leading-tight mb-2 group-hover:text-primary transition-colors">Hidden Kyoto: Beyond the Temples</h4>
+<div class="flex items-center justify-between text-[11px] text-secondary font-medium">
+<span>Zen Travel Co.</span>
+<span>1.2M views</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-8 py-6 bg-surface-container-lowest border-t border-outline-variant flex justify-center shrink-0">
+<button class="px-10 py-3 bg-primary text-white rounded-full font-semibold text-body-sm shadow-lg hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all">Start Virtual Tour</button>
+</div>
+</div>
+</div>
+<script>
+        // Live Clock
+        function updateClock() {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Tokyo', hour: '2-digit', minute: '2-digit', hour12: false };
+            const timeString = new Intl.DateTimeFormat('en-GB', options).format(now);
+            const clockEl = document.getElementById('live-clock');
+            if (clockEl) clockEl.textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Chat Toggle
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const closeChat = document.getElementById('close-chat');
+
+        if (chatToggle && chatWindow && closeChat) {
+            chatToggle.addEventListener('click', () => {
+                chatWindow.classList.toggle('opacity-0');
+                chatWindow.classList.toggle('pointer-events-none');
+                chatWindow.classList.toggle('translate-y-4');
+            });
+
+            closeChat.addEventListener('click', () => {
+                chatWindow.classList.add('opacity-0');
+                chatWindow.classList.add('pointer-events-none');
+                chatWindow.classList.add('translate-y-4');
+            });
+        }
+
+        // Modal Controls
+        const modal = document.getElementById('places-modal');
+        const closeModal = document.getElementById('close-modal');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const mtFujiCard = document.getElementById('mt-fuji-card');
+
+        const showModal = () => {
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        };
+
+        const hideModal = () => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        closeModal.addEventListener('click', hideModal);
+        modalOverlay.addEventListener('click', hideModal);
+        if (mtFujiCard) mtFujiCard.addEventListener('click', showModal);
+
+        // Escape key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') hideModal();
+        });
+    </script>
+</body></html>
